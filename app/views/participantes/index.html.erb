@@ -1,0 +1,9 @@
+<%= form_for :participante, :url => { :action  => 'create' } do |f| %>
+  Nome: <%= f.text_field :nome %><br>
+  Email: <%= f.text_field :email %><br>
+  Repetir email: <%= f.text_field :email2 %><br>
+  CPF: <%= f.text_field :cpf %><br>
+  Data de nascimento: <%= f.text_field :data_nascimento %><br>
+
+  <%= f.submit "Concordo com o regulamento e quero participar" %>
+<%end%>
