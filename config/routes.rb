@@ -1,5 +1,5 @@
 PesquisaWeb::Application.routes.draw do
-  root :to => "participantes#new"
+  root :to => "participantes#index"
 
   resources :participantes
   resources :pesquisas
