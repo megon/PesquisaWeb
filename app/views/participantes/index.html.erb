@@ -1,4 +1,4 @@
-<%= form_for :participante, :url => { :action  => 'create' } do |f| %>
+<%= form_for :participante do |f| %>
   Nome: <%= f.text_field :nome %><br>
   Email: <%= f.text_field :email %><br>
   Repetir email: <%= f.text_field :email2 %><br>
