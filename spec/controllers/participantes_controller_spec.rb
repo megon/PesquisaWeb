@@ -12,5 +12,7 @@ describe ParticipantesController do
     end  
 
     it "participante ja cadastrado"
+
+    it "participante com email != email2"
   end
 end

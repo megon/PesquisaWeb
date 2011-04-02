@@ -95,6 +95,7 @@ GEM
     treetop (1.4.9)
       polyglot (>= 0.3.1)
     tzinfo (0.3.25)
+    validates_as_cpf (0.1.0)
     webrat (0.7.3)
       nokogiri (>= 1.2.0)
       rack (>= 1.0)
@@ -108,4 +109,5 @@ DEPENDENCIES
   rails (= 3.0.3)
   rspec-rails (>= 2.0.0)
   sqlite3-ruby
+  validates_as_cpf
   webrat (>= 0.7.2)
