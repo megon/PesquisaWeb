@@ -5,6 +5,7 @@ class Participante < ActiveRecord::Base
   validates_format_of     :email,
                           :with       => /^([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})$/i,
                           :message    => 'email_deve_ser_valido'
+  validates_uniqueness_of :cpf
 
 
   attr_accessor :email2

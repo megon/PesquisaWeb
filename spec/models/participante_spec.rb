@@ -46,10 +46,18 @@ describe Participante do
     @participante.should_not be_valid
   end
 
-  it "nao deve ser valido se email for diferente de email2" do
+  it "nao deve ser valido com email diferente de email de confirmacao" do
     @participante.email2 = "outro@email.com"
     @participante.should_not be_valid
   end
 
-  pending "deve ser valido se cpf for unico"
+  it "nao deve ser valido para cpf duplicado" do
+    @participante.save
+    Participante.new(:nome=>"marco", 
+                    :email =>"email@email.com", 
+                    :email2 => "email@email.com",
+                    :cpf => "16187834836", 
+                    :data_nascimento => "21/08/1973").should_not be_valid
+    
+  end
 end
