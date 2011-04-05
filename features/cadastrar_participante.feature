@@ -6,7 +6,6 @@ Funcionalidade: Cadastrar participante de pesquisa
   Eu quero participar da pesquisa
   Então concorrer com os premios distribuidos pela pesquisa.
 
-  @wip  
   Esquema do Cenario: Preencher dados cadastrais com todos os dados corretos pela primeira vezs.
     Dado que eu estou na pagina inicial da pesquisa
     Quando eu preencher meu nome com "<nome>"
@@ -15,11 +14,11 @@ Funcionalidade: Cadastrar participante de pesquisa
     E meu cpf com "<cpf>"
     E minha data de nascimento com "<data_nascimento>"
     E clicar no botao "Concordo com o regulamento e quero participar"
-    Entao devo ser direcionado para a primeira pagina da pesquisa
+    Entao deve ser exibida a mensagem "<mensagem>"
   
     Exemplos:
-    |nome                      |email                                  |repetir_email          |cpf        |data_nascimento|
-    |Marco Rojo                |marco@megon.com.br                     |marco@megon.com.br     |16187834836|21/08/1973     |
-    |Bruno Roda                |bruno.roda@megon.com.br                |bruno.roda@megon.com.br|16187834836|18/08/1986     |
+    |nome                      |email                                  |repetir_email          |cpf        |data_nascimento|mensagem |
+    |Marco Rojo                |marco@megon.com.br                     |marco@megon.com.br     |16187834836|21/08/1973     |Bem-vindo|
+    |Bruno Roda                |bruno.roda@megon.com.br                |bruno.roda@megon.com.br|11239666802|18/08/1986     |Bem-vindo|
 
 

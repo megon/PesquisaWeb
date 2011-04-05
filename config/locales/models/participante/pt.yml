@@ -1,0 +1,18 @@
+# Sample localization file for English. Add more files in this directory for other locales.
+# See http://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting points.
+
+pt:
+  cpf_cadastrado: "O CPF já está cadastrado"
+  email_deve_ser_valido: "O email informado deve ser válido"  
+  confirmacao_email: "Os emails informados devem ser iguais"
+
+  activerecord:
+    errors: 
+      models:
+        participante:
+          attributes:
+            cpf:
+              invalid: "Cpf inválido"
+      messages:
+        blank: "%{attribute} deve ser preenchido."
+

@@ -26,4 +26,9 @@ Quando /^clicar no botao "([^"]*)"$/ do |botao|
   click_button botao
 end
 
+Entao /^deve ser exibida a mensagem "([^"]*)"$/ do |mensagem|
+  response.should contain(mensagem)
+end
+
+
 

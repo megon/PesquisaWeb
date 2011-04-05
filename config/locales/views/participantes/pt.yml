@@ -1,5 +1,7 @@
 # Sample localization file for English. Add more files in this directory for other locales.
 # See http://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting points.
 
-en:
-  hello: "Hello world"
+pt:
+  erro_cadastrar_participante: "Por favor, verifique os erros abaixo:"
+  botao_regulamento: "Concordo com o regulamento e quero participar"
+

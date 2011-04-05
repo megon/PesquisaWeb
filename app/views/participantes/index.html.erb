@@ -1,9 +1,20 @@
-<%= form_for :participante do |f| %>
+
+
+<%= form_for :participante, :url => { :action  => 'create' } do |f| %>
+  <%= flash[:notice] %><br>
+    <% if @participante != nil && @participante.errors.any? %>
+      <ul>
+        <% @participante.errors.full_messages.each do |msg| %>
+          <li><%= t(msg) %></li>
+        <% end %>
+      </ul>
+    <% end %>
+
   Nome: <%= f.text_field :nome %><br>
   Email: <%= f.text_field :email %><br>
   Repetir email: <%= f.text_field :email2 %><br>
   CPF: <%= f.text_field :cpf %><br>
   Data de nascimento: <%= f.text_field :data_nascimento %><br>
 
-  <%= f.submit "Concordo com o regulamento e quero participar" %>
+  <%= f.submit t("botao_regulamento") %>
 <%end%>
