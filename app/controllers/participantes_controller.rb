@@ -8,7 +8,7 @@ class ParticipantesController < ApplicationController
     if @participante.save
       redirect_to :controller => "pesquisas", :action =>"index"
     else
-      flash[:notice]= I18n.t("erro_cadastrar_participante")
+      flash[:notice] = @participante.errors.full_messages
       render :index
     end
   end

@@ -1,20 +1,39 @@
-
-
 <%= form_for :participante, :url => { :action  => 'create' } do |f| %>
-  <%= flash[:notice] %><br>
-    <% if @participante != nil && @participante.errors.any? %>
-      <ul>
-        <% @participante.errors.full_messages.each do |msg| %>
-          <li><%= t(msg) %></li>
-        <% end %>
-      </ul>
-    <% end %>
+    <fieldset>
+      <%= f.label(:nome)%>
+      <%= f.text_field :nome, :size => 35, :class=>"input_text", :maxlength => 100 %><br>
+      <div class="clean-red">
+        <%= f.error_message_on :nome%>
+      </div>
 
-  Nome: <%= f.text_field :nome %><br>
-  Email: <%= f.text_field :email %><br>
-  Repetir email: <%= f.text_field :email2 %><br>
-  CPF: <%= f.text_field :cpf %><br>
-  Data de nascimento: <%= f.text_field :data_nascimento %><br>
+      <%= f.label(:email)%>
+      <%= f.text_field :email, :size => 35, :class=>"input_text", :maxlength => 100 %><br>
+      <div class="clean-red">
+        <%= f.error_message_on :email%>
+      </div>
 
-  <%= f.submit t("botao_regulamento") %>
+      <%= f.label(:email2)%>
+      <%= f.text_field :email2, :size => 35, :class=>"input_text", :maxlength => 100 %><br>
+      <div class="clean-red">
+        <%= f.error_message_on :email2%>
+      </div>
+
+
+      <%= f.label(:cpf)%>
+      <%= f.text_field :cpf, :size => 20, :class=>"input_text", :maxlength => 11 %><br>
+      <div class="clean-red">
+        <%= f.error_message_on :cpf%><br>
+      </div>
+
+
+      <%= f.label(:data_nascimento)%>
+      <%= f.text_field :data_nascimento, :size => 20, :class=>"input_text", :maxlength => 10 %><br>
+      <div class="clean-red">
+        <%= f.error_message_on :data_nascimento%>
+      </div>
+
+
+    </fieldset>
+    <%= f.submit t("participar"), :class =>"button green" %>
+    
 <%end%>

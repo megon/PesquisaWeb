@@ -12,7 +12,7 @@ group :development, :test do
   gem "webrat", ">= 0.7.2"
 end
 gem "validates_as_cpf"
-
+gem 'dynamic_form'
 
 # Use unicorn as the web server
 # gem 'unicorn'

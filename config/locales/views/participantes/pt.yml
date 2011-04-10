@@ -3,5 +3,14 @@
 
 pt:
   erro_cadastrar_participante: "Por favor, verifique os erros abaixo:"
-  botao_regulamento: "Concordo com o regulamento e quero participar"
+  participar: "Participar"
 
+  helpers:
+    label:
+      participante:
+        nome: "Nome completo:"
+        email: "Email:"
+        email2: "Confirmação de email:"
+        cpf: "CPF:"
+        data_nascimento: "Data de nascimento:"
+        concordo_regulamento: "Concordo com o regulamento e quero participar"
