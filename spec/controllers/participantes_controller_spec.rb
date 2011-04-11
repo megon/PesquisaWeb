@@ -30,7 +30,7 @@ describe ParticipantesController do
                                         :email2 => "a@a.com",
                                         :data_nascimento => "21/08/1973",
                                         :cpf => "16187834836"}
-        flash[:notice].should eq("Por favor, verifique os erros abaixo:")
+        flash[:notice][0].should eq("Cpf has already been taken")
         response.should render_template :index
       end
     end

@@ -13,7 +13,7 @@ Funcionalidade: Cadastrar participante de pesquisa
     E repetir meu email com "<repetir_email>"
     E meu cpf com "<cpf>"
     E minha data de nascimento com "<data_nascimento>"
-    E clicar no botao "Concordo com o regulamento e quero participar"
+    E clicar no botao "Participar"
     Entao deve ser exibida a mensagem "<mensagem>"
   
     Exemplos:
