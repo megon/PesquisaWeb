@@ -19,6 +19,11 @@ table, caption, tbody, tfoot, thead, tr, th, td {
 
 ol, ul {
 	list-style: none;
+  text-align: left;
+}
+
+li{
+  padding-bottom: 10px;
 }
 
 html, body {
@@ -114,32 +119,25 @@ h2.texto_instrucoes {
 	width: 49%;
 }
 
-label{
-	float:left;
-	width:135px;
-	margin: 15px 5px 0px 0px;
-	padding-top:0.2em;	
-	color:#555555;
-	font-size: 10px;
-	font-weight:bold;
-	text-align:right;
-}
 
 fieldset {
-	padding: 5px 8px 60px;
+  padding-left: 40px;
+  padding-top: 15px;
+  
+}
+
+label {
+  text-align: left;
+  display: block;
 }
 
 .input_text {
-	float:left;
-	margin-top: 15px;
-	border:1px solid #666666;
-	background-color:#fff;
-  font-size: 12px;
-  height: 2em;
-	-webkit-border-radius: 5px;
-	-moz-border-radius: 5px;
-	border-radius: 5px; 
-	box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.4);	
+  font-size: 15px;
+	-webkit-border-radius: .5em; 
+	-moz-border-radius: .5em;
+	border-radius: .5em;
+	-webkit-box-shadow: 0 1px 2px rgba(0,0,0,.2);
+	-moz-box-shadow: 0 1px 2px rgba(0,0,0,.2);
 }
 
 .button {
@@ -189,4 +187,5 @@ fieldset {
 
 .clean-red{
   color:#CB2026;
+  font-size: 10px;
 }

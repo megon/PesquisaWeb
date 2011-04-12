@@ -1,38 +1,42 @@
 <%= form_for :participante, :url => { :action  => 'create' } do |f| %>
-    <fieldset>
-      <%= f.label(:nome)%>
-      <%= f.text_field :nome, :size => 35, :class=>"input_text", :maxlength => 100 %><br>
-      <div class="clean-red">
-        <%= f.error_message_on :nome%>
-      </div>
-
-      <%= f.label(:email)%>
-      <%= f.text_field :email, :size => 35, :class=>"input_text", :maxlength => 100 %><br>
-      <div class="clean-red">
-        <%= f.error_message_on :email%>
-      </div>
-
-      <%= f.label(:email2)%>
-      <%= f.text_field :email2, :size => 35, :class=>"input_text", :maxlength => 100 %><br>
-      <div class="clean-red">
-        <%= f.error_message_on :email2%>
-      </div>
-
-
-      <%= f.label(:cpf)%>
-      <%= f.text_field :cpf, :size => 20, :class=>"input_text", :maxlength => 11 %><br>
-      <div class="clean-red">
-        <%= f.error_message_on :cpf%><br>
-      </div>
-
-
-      <%= f.label(:data_nascimento)%>
-      <%= f.text_field :data_nascimento, :size => 20, :class=>"input_text", :maxlength => 10 %><br>
-      <div class="clean-red">
-        <%= f.error_message_on :data_nascimento%>
-      </div>
-
-
+    <fieldset id="cadastro_participante">
+      <ol>
+        <li>
+          <%= f.label(:nome)%>
+          <%= f.text_field :nome, :size => 35, :class=>"input_text", :maxlength => 100 %>
+          <div class="clean-red">
+            <%= f.error_message_on :nome%>
+          </div>
+        </li>
+        <li>
+          <%= f.label(:email)%>
+          <%= f.text_field :email, :size => 35, :class=>"input_text", :maxlength => 100 %>
+          <div class="clean-red">
+            <%= f.error_message_on :email%>
+          </div>
+        </li>
+        <li>
+          <%= f.label(:email2)%>
+          <%= f.text_field :email2, :size => 35, :class=>"input_text", :maxlength => 100 %>
+          <div class="clean-red">
+            <%= f.error_message_on :email2%>
+          </div>
+        </li>
+        <li>
+          <%= f.label(:cpf)%>
+          <%= f.text_field :cpf, :size => 20, :class=>"input_text", :maxlength => 11 %>
+          <div class="clean-red">
+            <%= f.error_message_on :cpf%>
+          </div>
+        </li>
+        <li>
+          <%= f.label(:data_nascimento)%>
+          <%= f.text_field :data_nascimento, :size => 20, :class=>"input_text", :maxlength => 10 %>
+          <div class="clean-red">
+            <%= f.error_message_on :data_nascimento%>
+          </div>
+        </li>
+       </ol>
     </fieldset>
     <%= f.submit "Participar", :class =>"button green" %>
     
