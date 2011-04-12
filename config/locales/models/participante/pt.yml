@@ -15,5 +15,5 @@ pt:
               invalid: "CPF inválido."
       messages:
         blank: "%{attribute} deve ser preenchido."
-        taken: "Obrigado, mas o participante informado já participou dessa pesquisa."
+        taken: "O CPF informado já está cadastrado."
 
