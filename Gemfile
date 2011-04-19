@@ -5,12 +5,18 @@ gem 'rails', '3.0.3'
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
-gem 'sqlite3-ruby', :require => 'sqlite3'
+require 'rubygems'
+require 'mongo'
+source 'http://gemcutter.org'
+
+gem "mongo_mapper"
+
 group :development, :test do
   gem "rspec-rails", ">= 2.0.0"
   gem "cucumber-rails", ">= 0.3.2"
   gem "webrat", ">= 0.7.2"
 end
+
 gem "validates_as_cpf"
 gem 'dynamic_form'
 

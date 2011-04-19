@@ -4,7 +4,7 @@ class ParticipantesController < ApplicationController
   end
 
   def create
-    @participante = Participante.new(params[:participante])
+    @participante = Participante.create(params[:participante])
     if @participante.save
       redirect_to :controller => "pesquisas", :action =>"index"
     else

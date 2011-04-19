@@ -6,6 +6,17 @@ pt:
   email_deve_ser_valido: "O email informado deve ser válido."  
   confirmacao_email: "Os emails informados devem ser iguais."
 
+  mongo_mapper:
+    errors:
+      models:
+        participante:
+          attributes:
+            cpf:
+              taken: "O CPF informado já está cadastrado."
+              invalid: "CPF inválido."
+      messages:
+        blank: "%{attribute} deve ser preenchido."
+
   activerecord:
     errors: 
       models:

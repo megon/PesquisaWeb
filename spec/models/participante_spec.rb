@@ -3,7 +3,7 @@ require 'spec_helper'
 describe Participante do
 
   before(:each) do
-    @participante = Participante.new(:nome=>"marco", 
+    @participante = Participante.create(:nome=>"marco", 
                                     :email =>"email@email.com", 
                                     :email2 => "email@email.com",
                                     :cpf => "16187834836", 
@@ -53,7 +53,7 @@ describe Participante do
 
   it "nao deve ser valido para cpf duplicado" do
     @participante.save
-    Participante.new(:nome=>"marco", 
+    Participante.create(:nome=>"marco", 
                     :email =>"email@email.com", 
                     :email2 => "email@email.com",
                     :cpf => "16187834836", 

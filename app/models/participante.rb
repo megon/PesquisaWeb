@@ -1,4 +1,12 @@
-class Participante < ActiveRecord::Base
+class Participante
+  include MongoMapper::Document
+
+  key :nome, String
+  key :email, String
+  key :cpf, String
+  key :data_nascimento, Date
+
+
   validates :nome, :presence => true
   validates :email, :presence => true
   validates :cpf, :presence => true, :cpf => true, :uniqueness => true
