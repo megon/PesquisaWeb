@@ -11,6 +11,7 @@ describe ParticipantesController do
         Participante.should_receive(:new).with("nome" => "nome do participante", "cpf" => "16187834836").and_return(@participante)
         @participante.should_receive(:save).and_return(true)
         post :create, :participante => {:nome => "nome do participante", "cpf" => "16187834836"}
+        assert_equal @participante, session[:participante]
         response.should redirect_to :controller => "pesquisas", :action =>"index"
     end  
 
