@@ -7,7 +7,7 @@ class ParticipantesController < ApplicationController
     @participante = Participante.new(params[:participante])
     if @participante.save
       session[:cpf] = @participante.cpf
-      redirect_to :controller => "pesquisas", :action =>"show"
+      redirect_to :controller => "passos", :action =>"show", :id => @participante.passo_atual
     else
       flash[:notice] = @participante.errors.full_messages
       render :index

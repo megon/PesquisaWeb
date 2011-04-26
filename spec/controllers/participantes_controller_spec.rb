@@ -12,7 +12,7 @@ describe ParticipantesController do
         @participante.should_receive(:save).and_return(true)
         post :create, :participante => {:nome => "nome do participante", "cpf" => "16187834836"}
         assert_equal @participante.cpf, session[:cpf]
-        response.should redirect_to :controller => "pesquisas", :action =>"show"
+        response.should redirect_to :controller => "passos", :action =>"show", :id => @participante.passo_atual
     end  
 
     context "deve rejeitar participante ja cadastrado" do

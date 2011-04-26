@@ -2,9 +2,11 @@ PesquisaWeb::Application.routes.draw do
 
   root :to => "participantes#index"
   resources :participantes
-  resources :pesquisas
-  get "pesquisas/show"
 
+  post "passos/create"
+  match 'passos/:id' => 'passos#show', :via => :get
+
+#  match 'participantes/:controller/:action/:passo_atual'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
