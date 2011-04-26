@@ -14,7 +14,11 @@ describe Participante do
   it "deve ser valido com todos os atributos validos" do
     @participante.should be_valid  
   end
-  
+
+  it "deve setar passo_atual para 1" do
+    assert_equal @participante.passo_atual, 1
+  end
+    
   it "nao deve ser valido com nome em branco" do
     @participante.nome = nil
     @participante.should_not be_valid
