@@ -7,7 +7,7 @@ class ParticipantesController < ApplicationController
     @participante = Participante.new(params[:participante])
     if @participante.save
       session[:participante] = @participante
-      redirect_to :controller => "pesquisas", :action =>"proximo_passo"
+      redirect_to :controller => "pesquisas", :action =>"show"
     else
       flash[:notice] = @participante.errors.full_messages
       render :index
