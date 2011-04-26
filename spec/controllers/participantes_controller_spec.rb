@@ -12,7 +12,7 @@ describe ParticipantesController do
         @participante.should_receive(:save).and_return(true)
         post :create, :participante => {:nome => "nome do participante", "cpf" => "16187834836"}
         assert_equal @participante, session[:participante]
-        response.should redirect_to :controller => "pesquisas", :action =>"index"
+        response.should redirect_to :controller => "pesquisas", :action =>"proximo_passo"
     end  
 
     context "deve rejeitar participante ja cadastrado" do
@@ -36,6 +36,8 @@ describe ParticipantesController do
       end
     end
 
-    it "participante com email != email2"
+    it "participante com email != email2" do
+      pending "implementar essa situacao"
+    end
   end
 end
