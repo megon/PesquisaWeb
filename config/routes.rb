@@ -3,6 +3,8 @@ PesquisaWeb::Application.routes.draw do
   root :to => "participantes#index"
   resources :participantes
   resources :pesquisas
+  get "pesquisas/proximo_passo"
+
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
