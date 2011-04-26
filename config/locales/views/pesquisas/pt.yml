@@ -1,0 +1,36 @@
+# Sample localization file for English. Add more files in this directory for other locales.
+# See http://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting points.
+
+pt:
+  helpers:
+    label:
+      pesquisa:
+        endereco: "Endereco:"
+        numero: "Número:"
+        bairro: "Bairro:"
+        cidade: "Cidade:"
+        estado: "Estado:"
+        ddd_residencial: "DDD:"
+        atualmente_esta: "Atualmente você está?"
+        tem_filhos: "Você tem filhos?"
+        quantos_filhos: "Quantos filhos?"
+        sexo_filho: "Sexo:"
+        data_nascimento_filho: "Data de nascimento:"
+        mora_com_voce: "Mora com você?"
+        grau_instrucao: "Qual o seu grau de instrução?"
+        estuda_momento: "Você está estudando no momento?"
+
+  solteiro: "Solteiro"
+  casado: "Casado ou vivendo com companheiro(a)"
+  separado: "Separado(a)/ desquitado(a)"
+  viuvo: "Viúvo(a)"
+
+  sim: "Sim"
+  nao: "Não"
+  
+  masculino: "Masculino"
+  feminino: "Feminino"
+
+  proximo_passo: "Ir para o próximo passo"
+
+  

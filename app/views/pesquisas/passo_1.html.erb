@@ -1,0 +1,155 @@
+<h1>Pesquisas#index</h1>
+<p>Bem-vindo a pesquisaweb, </p>
+
+<%= form_for :pesquisa, :url => { :action  => 'create' } do |f| %>
+    <fieldset id="dados_contato">
+      <ol>
+        <li>
+          <%= f.label(:endereco)%>
+          <%= f.text_field :endereco, :size => 50, :maxlength => 100 %>
+        </li>
+
+
+        <li>
+          <%= f.label(:numero)%>
+          <%= f.text_field :numero, :size => 10, :maxlength => 10 %>
+        </li>
+
+        <li>
+          <%= f.label(:bairro)%>
+          <%= f.text_field :bairro, :size => 50, :maxlength => 100 %>
+        </li>
+
+        <li>
+          <%= f.label(:cidade)%>
+          <%= f.text_field :cidade, :size => 50, :maxlength => 100 %>
+        </li>
+
+        <li>
+          <%= f.label(:estado)%>
+          <%= f.select :estado, 
+               options_for_select([
+                ["AC"],  
+                ["AL"],  
+                ["AM"],  
+                ["AP"],  
+                ["BA"],  
+                ["CE"],  
+                ["DF"],   
+                ["ES"],  
+                ["GO"],  
+                ["MA"],  
+                ["MG"],  
+                ["MS"],  
+                ["MT"], 
+                ["PA"],  
+                ["PB"],  
+                ["PE"],  
+                ["PI"],  
+                ["PR"], 
+                ["RJ"],  
+                ["RN"],  
+                ["RS"],  
+                ["RO"],  
+                ["RR"],  
+                ["SC"],  
+                ["SE"],  
+                ["SP"],  
+                ["TO"]
+          ]) %>
+        </li>
+
+        <li>
+          <%= f.label(:ddd_residencial)%>
+          <%= f.text_field :ddd_residencial, :size => 2, :maxlength => 2 %>
+        </li>
+
+        <li>
+          <%= f.label(:telefone_residencial)%>
+          <%= f.text_field :telefone_residencial, :size => 8, :maxlength => 8 %>
+        </li>
+       </ol>
+    </fieldset>
+
+    <fieldset id="perfil">
+      <ol>
+        <li>
+          <%= f.label(:atualmente_esta)%>
+          <%= f.radio_button :atualmente_esta, "solteiro"%><label><%= t :solteiro%></label>
+          <%= f.radio_button :atualmente_esta, "casado"%><label><%= t :casado%></label>
+          <%= f.radio_button :atualmente_esta, "separado"%><label><%= t :separado%></label>
+          <%= f.radio_button :atualmente_esta, "viuvo"%><label><%= t :viuvo%></label>
+        </li>
+
+        <li>
+          <%= f.label(:tem_filhos)%>
+          <%= f.radio_button :tem_filhos, "sim"%><label><%= t :sim%></label>
+          <%= f.radio_button :tem_filhos, "nao"%><label><%= t :nao%></label>
+        </li>
+
+        <li>
+          <%= f.label(:quantos_filhos)%>
+          <%= f.select :quantos_filhos, 
+               options_for_select([
+                ["1"],  
+                ["2"],  
+                ["3"],  
+                ["4"],  
+                ["5"],  
+                ["6"],  
+                ["7"],   
+                ["8"],  
+                ["9"],  
+                ["10"]
+          ]) %>
+        </li>
+
+        <li>
+          <%= f.label(:sexo_filho)%>
+          <%= f.radio_button :sexo_1_filho, "masculino"%><label><%= t :masculino%></label>
+          <%= f.radio_button :sexo_1_filho, "feminino"%><label><%= t :feminino%></label>
+        </li>
+
+        <li>
+          <%= f.label(:data_nascimento_filho)%>
+          <%= f.text_field :data_nascimento_1_filho, :size => 10, :maxlength => 10 %>
+        </li>
+
+        <li>
+          <%= f.label(:mora_com_voce)%>
+          <%= f.radio_button :mora_com_voce_1_filho, "sim"%><label><%= t :sim%></label>
+          <%= f.radio_button :mora_com_voce_1_filho, "nao"%><label><%= t :nao%></label>
+        </li>
+
+      </ol>
+    </fieldset>
+
+    <fieldset id="escolaridade">
+      <ol>
+        <li>
+          <%= f.label(:grau_instrucao)%>
+          <%= f.select :grau_instrucao, 
+               options_for_select([
+                ["Primeiro grau"],  
+                ["Segundo grau"],  
+                ["Graduação"],  
+                ["Pós-graduação"],  
+                ["Mestrado"],  
+                ["Doutorado"],  
+                ["MBA"],   
+                ["Pós-doutorado"]
+          ]) %>
+        </li>
+
+        <li>
+          <%= f.label(:estuda_momento)%>
+          <%= f.radio_button :estuda_momento, "sim"%><label><%= t :sim%></label>
+          <%= f.radio_button :estuda_momento, "nao"%><label><%= t :nao%></label>
+        </li>
+
+       </ol>
+    </fieldset>
+
+    <%= f.submit t :proximo_passo %>
+<%end%>
+
