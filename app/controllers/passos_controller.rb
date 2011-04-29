@@ -4,17 +4,15 @@ class PassosController < ApplicationController
 
   def create
     @participante = Participante.find_by_cpf(session[:cpf])
-    @resposta = Resposta.new (params[:passo])
-    show
+    @participante.increment(:passo_atual => 1)
+    @resposta = Resposta.create (params[:passo])
+    @resposta.id_passo= @participante.passo_atual
+    @participante.respostas.push @resposta
+    redirect_to :action => "show", :id => @participante.passo_atual + 1
   end
 
   def show
-    puts params[:id]
-    if params[:id] == "1"
-      render(:template => "passos/1")
-    else
-      render(:template => "passos/2")
-    end
+    render(:template => "passos/#{params[:id]}")
   end
 
 end

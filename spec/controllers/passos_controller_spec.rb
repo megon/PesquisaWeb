@@ -3,33 +3,18 @@ require 'spec_helper'
 describe PassosController do
 
   describe "POST create" do
-    context "deve salvar as respostas e redirecionar o participante para o proximo passo" do
-      it "deve recuperar o participante da sessao" do
-        Participante.should_receive(:find_by_cpf).with(session[:cpf]).and_return(@participante)
-        post :create, :passo => {:endereco => "endereco", :numero => "111"}
-      end
+    it "deve salvar as respostas e redirecionar o participante para o proximo passo" do
+      @participante = mock_model(Participante, :passo_atual => 1, :respostas => [])
+      @resposta = mock_model(Resposta).as_null_object
+
+      Participante.should_receive(:find_by_cpf).with(session[:cpf]).and_return(@participante)
+      Resposta.should_receive(:create).with("endereco" => "endereco", "numero" => "111").and_return(@resposta)
+      @resposta.should_receive(:id_passo=).with(@participante.passo_atual)
+      @participante.respostas.should_receive(:push).with(@resposta)
+      @participante.should_receive(:increment).with(:passo_atual => 1)
+      post :create, :passo => {:endereco => "endereco", :numero => "111"}, :id => @participante.passo_atual + 1
+      response.should redirect_to :action =>"show", :id => @participante.passo_atual + 1
       
-      it "deve criar as respostas do participante" do
-        pending "trabalhando na implementacao do item 'deve ir para o passo_2 da pesquisa'"
-
-        Resposta.should_receive(:new).with("endereco" => "endereco", "numero" => "111").and_return(@resposta)
-
-        post :create, :passo => {:endereco => "endereco", :numero => "111"}
-        
-      end
-
-      it "deve gravar as respostas do participante"
-
-      it "deve recuperar pesquisa[passo_id]"
-
-      it "deve ir para o proximo passo da pesquisa (passo_id + 1)" do
-        post :create, :passo => {:endereco => "endereco", :numero => "111"}
-        response.should render_template "pesquisas/passo_2"
-      end
-
-      it "deve setar passo_id para o proximo passo"
-
-      it "deve redirecionar o participante para o proximo passo"
     end
   end  
 end
