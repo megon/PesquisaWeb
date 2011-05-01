@@ -8,12 +8,19 @@ describe PassosController do
       @resposta = mock_model(Resposta).as_null_object
 
       Participante.should_receive(:find_by_cpf).with(session[:cpf]).and_return(@participante)
-      Resposta.should_receive(:create).with("endereco" => "endereco", "numero" => "111").and_return(@resposta)
+      Resposta.should_receive(:new).with("endereco" => "endereco", "numero" => "111").and_return(@resposta)
+
+      @resposta.should_receive(:participante=).with(@participante)
       @resposta.should_receive(:id_passo=).with(@participante.passo_atual)
-      @participante.respostas.should_receive(:push).with(@resposta)
+
+      @resposta.should_receive(:save).and_return(true)
       @participante.should_receive(:increment).with(:passo_atual => 1)
       post :create, :passo => {:endereco => "endereco", :numero => "111"}, :id => @participante.passo_atual + 1
       response.should redirect_to :action =>"show", :id => @participante.passo_atual + 1
+      
+    end
+
+    it "deve atualizar as respostas do participante para o passo ja preenchido" do
       
     end
   end  
