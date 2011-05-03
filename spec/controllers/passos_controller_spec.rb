@@ -14,9 +14,5 @@ describe PassosController do
       post :create, :passo => {:endereco => "endereco", :numero => "111", "passo_id" => 1}, :id => 1
       response.should redirect_to :action =>"show", :id => @resposta.passo_id.to_int + 1
     end
-
-    it "deve atualizar as respostas do participante para o passo ja preenchido" do
-      
-    end
   end  
 end
