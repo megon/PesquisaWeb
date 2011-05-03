@@ -1,1 +1,112 @@
-aaa
+<h1>Pesquisaweb</h1>
+<p>Você está em 2/2 </p>
+
+<%= form_for :passo, :url => { :action  => 'create' } do |f| %>
+    <%= f.hidden_field :passo_id, :value => "2" %>
+    <fieldset id="sua_casa">
+      <ol>
+        <li>
+          <%= f.label(:situacao_casa)%><br>
+          <%= f.select :situacao_casa, 
+               options_for_select([
+                ["Alugada"],  
+                ["Própria quitada"],  
+                ["Própria financiada"],  
+                ["Emprestada de terceiros"]
+          ]) %>
+        </li>
+
+        <li>
+          <label><%= t :eletrodomesticos%></label><br>
+
+          <%= f.label(:tv_em_cores)%>
+          <%= f.text_field :tv_em_cores, :size => 4, :maxlength => 2, :value => 0 %><br>
+
+          <%= f.label(:radio)%>
+          <%= f.text_field :radio, :size => 4, :maxlength => 2, :value => 0 %><br>
+
+          <%= f.label(:dvd)%>
+          <%= f.text_field :dvd, :size => 4, :maxlength => 2, :value => 0 %><br>
+
+          <%= f.label(:home_theater)%>
+          <%= f.text_field :home_theater, :size => 4, :maxlength => 2, :value => 0 %><br>
+
+          <%= f.label(:notebook)%>
+          <%= f.text_field :notebook, :size => 4, :maxlength => 2, :value => 0 %><br>
+
+          <%= f.label(:tablet)%>
+          <%= f.text_field :tablet, :size => 4, :maxlength => 2, :value => 0 %><br>
+
+          <%= f.label(:mp3)%>
+          <%= f.text_field :mp3, :size => 4, :maxlength => 2, :value => 0 %><br>
+
+        </li>
+
+        <li>
+          <%= f.label(:possui_tv_assinatura)%>
+          <%= f.radio_button :possui_tv_por_assinatura, "sim"%><label><%= t :sim%></label>
+          <%= f.radio_button :possui_tv_por_assinatura, "nao"%><label><%= t :nao%></label><br>
+
+          <%= f.label(:operadora_tv_assinatura)%><br>
+          <%= f.select :operadora_tv_assinatura, 
+               options_for_select([
+                ["NET"],  
+                ["SKY"],  
+                ["TVA"],  
+                ["Outra"]
+          ]) %>
+        </li>
+       </ol>
+    </fieldset>
+
+    <fieldset id="investimento">
+      <ol>
+        <li>
+        <label><%= t :renda%></label><br>
+          <%= f.label(:renda_individual)%>
+          <%= f.select :renda_individual, 
+               options_for_select([
+                ["Não possuo renda individual"],  
+                ["Até R$545,00"],  
+                ["De R$546,00 até R$1.040,00"],  
+                ["De R$1.041,00 até R$2.600,00"],  
+                ["De R$2.601,00 até R$3.900,00"],  
+                ["De R$3.901,00 até R$6.500,00"],  
+                ["De R$6.501,00 até R$9.100,00"],  
+                ["Acima de R$9.101,00"]
+          ]) %><br>
+
+          <%= f.label(:renda_familiar)%>
+          <%= f.select :renda_familiar, 
+               options_for_select([
+                ["Até R$545,00"],  
+                ["De R$546,00 até R$1.040,00"],  
+                ["De R$1.041,00 até R$2.600,00"],  
+                ["De R$2.601,00 até R$3.900,00"],  
+                ["De R$3.901,00 até R$6.500,00"],  
+                ["De R$6.501,00 até R$9.100,00"],  
+                ["Acima de R$9.101,00"]
+
+          ]) %>
+
+        <li>
+          <%= f.label(:cartao_credito)%>
+          <%= f.radio_button :cartao_credito, "sim"%><label><%= t :sim%></label>
+          <%= f.radio_button :cartao_credito, "nao"%><label><%= t :nao%></label><br>
+          <%= f.label(:quais_cartoes_credito)%><br>
+          <%= f.check_box :visa %>
+          <%= f.label(:visa)%><br>
+          <%= f.check_box :mastercard %>
+          <%= f.label(:mastercard)%><br>
+          <%= f.check_box :american_express %>
+          <%= f.label(:american_express)%><br>
+          <%= f.check_box :outros %>
+          <%= f.label(:outros)%>
+
+        </li>
+
+      </ol>
+    </fieldset>
+    <%= f.submit t :proximo_passo %>
+<%end%>
+
