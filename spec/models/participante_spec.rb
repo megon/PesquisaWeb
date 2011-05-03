@@ -64,10 +64,17 @@ describe Participante do
 
   context "inclusao de respostas" do
     it "deve incluir respostas para o participante" do
-      resposta = Resposta.create(:passo_id=>@participante.passo_atual,
-                             :endereco =>'rua 1',
-                             :quantos_filhos => 3,
-                             :participante => @participante)
+      resposta = Resposta.new(:endereco =>'rua 1',
+                             :quantos_filhos => 3, :passo_id => "1")
+      @participante.add_resposta(resposta)
+      assert_equal @participante.respostas.count, 1
+    end
+
+    it "deve atualizar as respostas de um passo ja respondido anteriormente" do
+      resposta = Resposta.new(:endereco =>'rua 11112',
+                             :quantos_filhos => 322222,
+                             :passo_id => "1")
+      @participante.add_resposta resposta
       assert_equal @participante.respostas.count, 1
     end
   end

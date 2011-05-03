@@ -21,6 +21,14 @@ class Participante
 
   has_many :respostas
 
+  def add_resposta(nova_resposta)
+    resposta = self.respostas.find_by_participante_id_and_passo_id(self.id, nova_resposta.passo_id)
+    if resposta.present?
+      self.respostas.delete(resposta.id)
+    end
+    self.respostas.push nova_resposta
+  end
+
   private
     def confirmacao_email
       errors.add("email2", I18n.t('confirmacao_email')) unless email == email2

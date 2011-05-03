@@ -2,6 +2,7 @@
 <p>Bem-vindo a pesquisaweb, </p>
 
 <%= form_for :passo, :url => { :action  => 'create' } do |f| %>
+    <%= f.hidden_field :passo_id, :value => "1" %>
     <fieldset id="dados_contato">
       <ol>
         <li>
