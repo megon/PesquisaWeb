@@ -14,15 +14,15 @@ class Participante
   validates :email, :presence => true
   validates :cpf, :presence => true, :cpf => true, :uniqueness => true
   validates :data_nascimento, :presence => true
-  validate :confirmacao_email
   validates_format_of     :email,
                           :with       => /^([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})$/i,
                           :message    => I18n.t('email_deve_ser_valido')
+  before_create :confirmacao_email
 
   has_many :respostas
 
   def add_resposta(nova_resposta)
-    resposta = self.respostas.find_by_participante_id_and_passo_id(self.id, nova_resposta.passo_id)
+    resposta = self.respostas.find_by_passo_id(nova_resposta.passo_id)
     if resposta.present?
       self.respostas.delete(resposta.id)
     end
@@ -31,6 +31,9 @@ class Participante
 
   private
     def confirmacao_email
-      errors.add("email2", I18n.t('confirmacao_email')) unless email == email2
+      if email != email2
+        errors.add("email2", I18n.t('confirmacao_email'))
+        false
+      end
     end
 end
