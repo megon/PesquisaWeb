@@ -1,35 +1,36 @@
 <h1>Pesquisaweb</h1>
 <p>Você está em 1/2 </p>
 
-<%= form_for :passo, :url => { :action  => 'create' } do |f| %>
+<%= form_for :passo, :as => "passo", :url => {:action  => 'create'}, :html => {:id => "passo_form"} do |f| %>
     <%= f.hidden_field :passo_id, :value => "1" %>
     <fieldset id="dados_contato">
       <ol>
         <li>
           <%= f.label(:endereco)%>
-          <%= f.text_field :endereco, :size => 50, :maxlength => 100 %>
+          <%= f.text_field :endereco, :size => 50, :maxlength => 100, :class => "required" %>
         </li>
 
 
         <li>
           <%= f.label(:numero)%>
-          <%= f.text_field :numero, :size => 10, :maxlength => 10 %>
+          <%= f.text_field :numero, :size => 10, :maxlength => 10, :class => "required number" %>
         </li>
 
         <li>
           <%= f.label(:bairro)%>
-          <%= f.text_field :bairro, :size => 50, :maxlength => 100 %>
+          <%= f.text_field :bairro, :size => 50, :maxlength => 100, :class => "required" %>
         </li>
 
         <li>
           <%= f.label(:cidade)%>
-          <%= f.text_field :cidade, :size => 50, :maxlength => 100 %>
+          <%= f.text_field :cidade, :size => 50, :maxlength => 100, :class => "required" %>
         </li>
 
         <li>
           <%= f.label(:estado)%>
           <%= f.select :estado, 
                options_for_select([
+                ["Selecione um estado", ""],  
                 ["AC"],  
                 ["AL"],  
                 ["AM"],  
@@ -57,17 +58,17 @@
                 ["SE"],  
                 ["SP"],  
                 ["TO"]
-          ]) %>
+          ]), {}, {:class => "required"}%>
         </li>
 
         <li>
           <%= f.label(:ddd_residencial)%>
-          <%= f.text_field :ddd_residencial, :size => 2, :maxlength => 2 %>
+          <%= f.text_field :ddd_residencial, :size => 2, :maxlength => 2, :class => "required number" %>
         </li>
 
         <li>
           <%= f.label(:telefone_residencial)%>
-          <%= f.text_field :telefone_residencial, :size => 8, :maxlength => 8 %>
+          <%= f.text_field :telefone_residencial, :size => 8, :maxlength => 8, :class => "required number" %>
         </li>
        </ol>
     </fieldset>
@@ -92,6 +93,7 @@
           <%= f.label(:quantos_filhos)%>
           <%= f.select :quantos_filhos, 
                options_for_select([
+                ["Selecione uma opção", ""],  
                 ["1"],  
                 ["2"],  
                 ["3"],  
@@ -131,6 +133,7 @@
           <%= f.label(:grau_instrucao)%>
           <%= f.select :grau_instrucao, 
                options_for_select([
+                ["Selecione uma opção", ""],  
                 ["Primeiro grau"],  
                 ["Segundo grau"],  
                 ["Graduação"],  
@@ -153,4 +156,9 @@
 
     <%= f.submit t :proximo_passo %>
 <%end%>
+<script type="text/javascript">
+$().ready(function() {
+	$("#passo_form").validate();
+});
+</script>
 
