@@ -5,7 +5,7 @@ pt:
   helpers:
     label:
       passo:
-        endereco: "Endereco:"
+        endereco: "Endereço:"
         numero: "Número:"
         bairro: "Bairro:"
         cidade: "Cidade:"

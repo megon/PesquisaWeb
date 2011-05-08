@@ -261,6 +261,7 @@ $.extend($.validator, {
 		number: "Digite um número válido.",
 		digits: "Please enter only digits.",
 		creditcard: "Please enter a valid credit card number.",
+    telefone: "Digite um número de telefone válido. Ex.: (99)9999-9999.",
 		equalTo: "Please enter the same value again.",
 		accept: "Please enter a value with a valid extension.",
 		maxlength: $.validator.format("Please enter no more than {0} characters."),
@@ -748,7 +749,8 @@ $.extend($.validator, {
 		number: {number: true},
 		numberDE: {numberDE: true},
 		digits: {digits: true},
-		creditcard: {creditcard: true}
+		creditcard: {creditcard: true},
+		telefone: {telefone: true},
 	},
 
 	addClassRules: function(className, rules) {
@@ -1054,6 +1056,11 @@ $.extend($.validator, {
 
 			return (nCheck % 10) == 0;
 		},
+
+		telefone: function(value, element) {
+			return this.optional(element) || /^\(?\d{2}\)?[\s-]?\d{4}-?\d{4}$/.test(value);
+		},
+
 
 		// http://docs.jquery.com/Plugins/Validation/Methods/accept
 		accept: function(value, element, param) {
