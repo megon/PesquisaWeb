@@ -18,7 +18,7 @@ Funcionalidade: Cadastrar participante de pesquisa
   
     Exemplos:
     |nome                      |email                                  |repetir_email          |cpf        |data_nascimento|mensagem |
-    |Marco Rojo                |marco@megon.com.br                     |marco@megon.com.br     |16187834836|21/08/1973     |Bem-vindo|
-    |Bruno Roda                |bruno.roda@megon.com.br                |bruno.roda@megon.com.br|11239666802|18/08/1986     |Bem-vindo|
+    |Marco Rojo                |marco@megon.com.br                     |marco@megon.com.br     |16187834836|21/08/1973     |1/2|
+    |Bruno Roda                |bruno.roda@megon.com.br                |bruno.roda@megon.com.br|11239666802|18/08/1986     |1/2|
 
 
