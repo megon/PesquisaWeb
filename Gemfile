@@ -8,6 +8,7 @@ gem 'rails', '3.0.3'
 require 'rubygems'
 
 gem "mongo_mapper"
+gem "Rails.env"
 
 group :development, :test do
   gem "rspec-rails", ">= 2.0.0"

@@ -47,8 +47,12 @@ describe Participante do
     end
 
     it "nao deve ser valido com email diferente de email de confirmacao" do
-      @participante.email2 = "outro@email.com"
-      @participante.should_not be_valid
+      @participanteComEmailsDiferentes = Participante.create(:nome=>"marco", 
+                                    :email =>"email@email.com", 
+                                    :email2 => "outro@email.com",
+                                    :cpf => "16187834836", 
+                                    :data_nascimento => "21/08/1973")
+      @participanteComEmailsDiferentes.should_not be_valid
     end
 
     it "nao deve ser valido para cpf duplicado" do

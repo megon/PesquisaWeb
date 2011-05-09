@@ -12,6 +12,7 @@
       <%= form_for :passo, :as => "passo", :url => {:action  => 'create'}, :html => {:id => "passo_form"} do |f| %>
           <%= f.hidden_field :passo_id, :value => "1" %>
           <fieldset id="dados_contato">
+            <legend>Dados do contato</legend>
             <ol>
               <li class="form-row form-text">
                 <%= f.label(:endereco, :class => "question")%>
@@ -78,6 +79,7 @@
           </fieldset>
 
           <fieldset id="perfil">
+            <legend>Perfil</legend>
             <ol>
               <li class="form-row form-text">
                 <%= f.label(:atualmente_esta, :class => "question")%>
@@ -132,6 +134,7 @@
           </fieldset>
 
           <fieldset id="escolaridade">
+            <legend>Escolaridade</legend>
             <ol>
               <li class="form-row form-text">
                 <%= f.label(:grau_instrucao, :class => "question")%>
@@ -167,6 +170,7 @@
 
   $(document).ready(function(){
     $("#passo_form").validate();
+    $("#passo_telefone_residencial").mask("(99)9999-9999",{placeholder:" "});
   });
 
 $(document).ready(function() {

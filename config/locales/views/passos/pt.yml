@@ -20,6 +20,7 @@ pt:
         grau_instrucao: "Qual o seu grau de instrução?"
         estuda_momento: "Você está estudando no momento?"
         situacao_casa: "Qual das seguintes situações melhor descreve a situação da sua casa?"
+        eletrodomesticos: "Dos itens abaixo, quais você possui e quantos? (Marque 0 quando não possuir nenhum)"
         tv_em_cores: "TV em cores:"
         radio: "Rádio:"
         dvd: "DVD:"
@@ -29,6 +30,7 @@ pt:
         mp3: "MP3:"
         possui_tv_assinatura: "Você possui TV por assinatura?"
         operadora_tv_assinatura: "Qual a operadora?"
+        renda: "Informe sua renda mensal familiar e individual. (Incluir salários, bônus, comissões, aluguéis, etc)"
         renda_individual: "Renda individual:"
         renda_familiar: "Renda familiar:"
         cartao_credito: "Você possui cartão de crédito?"
@@ -52,7 +54,6 @@ pt:
 
   proximo_passo: "Ir para o próximo passo"
 
-  eletrodomesticos: "Dos itens abaixo, quais você possui e quantos? (Marque 0 quando não possuir nenhum)"
+  
 
-  renda: "Informe sua renda mensal familiar e individual. (Incluir salários, bônus, comissões, aluguéis, etc)"
   
