@@ -41,10 +41,16 @@
     </script>
 
     <script type="text/javascript">
+      var today = new Date()
+      var year = today.getFullYear();
+      var minDate = (year - 80)
+      var maxDate = (year - 10)
+      var defaultDate = today.getDay() + "/" + today.getMonth() + "/" + maxDate
+
 		  $(document).ready(function() {
         $(function() {
           $.datepicker.setDefaults( $.datepicker.regional[ "pt-BR" ] );
-          $("#participante_data_nascimento").datepicker({maxDate: "-10Y", changeMonth: true, changeYear: true});
+          $("#participante_data_nascimento").datepicker({maxDate: maxDate, changeMonth: true, changeYear: true, yearRange: minDate + ":" + maxDate, defaultDate: defaultDate});
         });
       });
     </script>
