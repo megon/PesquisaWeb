@@ -1,0 +1,51 @@
+	<div class="wrapper">
+		<div id="header">
+			<img height="23" width="156" src="images/megon-logo.png" alt="Megon" style="float: left; margin-top: 6px;">
+			<div id="site_menu" class="left">
+			</div><!-- site_menu -->
+		</div>
+	</div><!-- header -->
+	<div class="wrapper">
+		<div id="content">
+
+      Você completou nossa pesquisa.<br><br>
+      Aproveite e convide seus amigos para participar de nossa pesquisa.
+      Cada um deles irá receber um email com o link de acesso para participar.
+
+      <div id="indicacao">
+        <% if flash[:notice] %>
+          <p id="notice" ><%= flash[:notice] %></p>
+        <% end %>
+        
+
+        <%= form_for :indicacao, :url => { :action  => 'create' } do |f| %>
+          <table>
+            <div id="convidado">
+              <tr>  
+                <td>
+                  <%= f.label(:nome)%>
+                  <%= f.text_field :nome, :size => 35, :class=>"input_text", :maxlength => 100 %>
+                  <div class="clean-red">
+                    <%= f.error_message_on :nome%>
+                  </div>  
+                </td>
+                <td>
+                  <%= f.label(:email)%>
+                  <%= f.text_field :email, :size => 35, :class=>"input_text", :maxlength => 100 %>
+                  <div class="clean-red">
+                    <%= f.error_message_on :email%>
+                  </div>  
+                </td>
+              </tr>
+            </div>
+          </table>
+          <%= f.submit "Convidar", :class =>"button green" %>
+        <%end%>
+      </div>
+		</div>
+	</div>
+<script type="text/javascript">
+$().ready(function() {
+	$("#passo_form").validate();
+});
+</script>

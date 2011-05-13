@@ -1,0 +1,19 @@
+<tr>  
+  <td>
+    <%= f.label(:nome)%>
+    <%= f.text_field :nome, :size => 35, :class=>"input_text", :maxlength => 100 %>
+    <div class="clean-red">
+      <%= f.error_message_on :nome%>
+    </div>  
+  </td>
+  <td>
+    <%= f.label(:email)%>
+    <%= f.text_field :email, :size => 35, :class=>"input_text", :maxlength => 100 %>
+    <div class="clean-red">
+      <%= f.error_message_on :email%>
+    </div>  
+  </td>
+</tr>
+
+
+

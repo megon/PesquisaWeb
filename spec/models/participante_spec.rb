@@ -4,7 +4,7 @@ describe Participante do
   before(:each) do
     @participante = Participante.create(:nome=>"marco", 
                                     :email =>"email@email.com", 
-                                    :email2 => "email@email.com",
+                                    :email_confirmation => "email@email.com",
                                     :cpf => "16187834836", 
                                     :data_nascimento => "21/08/1973")
 
@@ -42,17 +42,8 @@ describe Participante do
 
     it "nao deve ser valido com email invalido" do
       @participante.email = "aaa"
-      @participante.email2 = "aaa"
+      @participante.email_confirmation = "aaa"
       @participante.should_not be_valid
-    end
-
-    it "nao deve ser valido com email diferente de email de confirmacao" do
-      @participanteComEmailsDiferentes = Participante.create(:nome=>"marco", 
-                                    :email =>"email@email.com", 
-                                    :email2 => "outro@email.com",
-                                    :cpf => "16187834836", 
-                                    :data_nascimento => "21/08/1973")
-      @participanteComEmailsDiferentes.should_not be_valid
     end
 
     it "nao deve ser valido para cpf duplicado" do
@@ -80,6 +71,24 @@ describe Participante do
                              :passo_id => "1")
       @participante.add_resposta resposta
       assert_equal @participante.respostas.count, 1
+    end
+
+  end
+
+  context "indicacao de amigos para participar da pesquisa" do
+    it "deve adicionar indicado" do
+      indicacao = Indicacao.new(:nome => 'Patricia',
+                              :email => 'patricia@megon.com.br')
+      @participante.add_indicacao indicacao
+      assert_equal @participante.indicacoes.count, 1
+    end
+
+    it "deve enviar email de convite para o indicado" do
+      indicacao = Indicacao.new(:nome => 'Patricia',
+                              :email => 'patricia@megon.com.br')
+      @participante.add_indicacao indicacao
+      mail = ActionMailer::Base.deliveries.last
+      indicacao.email.should == mail.to.first
     end
   end
 

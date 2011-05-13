@@ -2,7 +2,7 @@ Dado /^que eu tenha preenchido meus dados de cadastro$/ do
   visit "/"
   fill_in "participante[nome]", :with => "participante"
   fill_in "participante[email]", :with => "a@a.com"
-  fill_in "participante[email2]", :with => "a@a.com"
+  fill_in "participante[email_confirmation]", :with => "a@a.com"
   fill_in "participante[cpf]", :with => "16187834836"
   fill_in "participante[data_nascimento]", :with => "21/08/1973"
   click_button "Participar"

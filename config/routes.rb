@@ -2,6 +2,7 @@ PesquisaWeb::Application.routes.draw do
 
   root :to => "participantes#index"
   resources :participantes
+  resources :indicacoes
 
   post "passos/create"
   match 'passos/:id' => 'passos#show', :via => :get

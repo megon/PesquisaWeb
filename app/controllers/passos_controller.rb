@@ -1,4 +1,7 @@
 class PassosController < ApplicationController
+
+  ULTIMO_PASSO = 2
+
   def index
   end
 
@@ -9,13 +12,15 @@ class PassosController < ApplicationController
     @participante.passo_atual = @resposta.passo_id  
     @participante.save
 
-
     proximo_passo = @resposta.passo_id + 1
-    redirect_to :action => "show", :id => proximo_passo
+    if proximo_passo <= ULTIMO_PASSO
+      redirect_to :action => "show", :id => proximo_passo
+    else
+      redirect_to indicacoes_path
+    end
   end
 
   def show
     render(:template => "passos/#{params[:id]}")
   end
-
 end

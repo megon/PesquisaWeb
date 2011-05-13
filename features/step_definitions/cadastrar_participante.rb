@@ -11,7 +11,7 @@ Quando /^meu email com "([^"]*)"$/ do |email|
 end
 
 Quando /^repetir meu email com "([^"]*)"$/ do |repetir_email|
-  fill_in "participante[email2]", :with => repetir_email
+  fill_in "participante[email_confirmation]", :with => repetir_email
 end
 
 Quando /^meu cpf com "([^"]*)"$/ do |cpf|

@@ -19,7 +19,7 @@ describe ParticipantesController do
       before do
         post :create, :participante => {:nome => "nome do participante", 
                                         :email => "a@a.com", 
-                                        :email2 => "a@a.com",
+                                        :email_confirmation => "a@a.com",
                                         :data_nascimento => "21/08/1973",
                                         :cpf => "16187834836"}
 
@@ -28,16 +28,12 @@ describe ParticipantesController do
       it "deve renderizar pagina inicial informando que participante ja esta cadastrado" do
         post :create, :participante => {:nome => "nome do participante", 
                                         :email => "a@a.com", 
-                                        :email2 => "a@a.com",
+                                        :email_confirmation => "a@a.com",
                                         :data_nascimento => "21/08/1973",
                                         :cpf => "16187834836"}
         flash[:notice][0].should contain("O CPF")
         response.should render_template :index
       end
-    end
-
-    it "participante com email != email2" do
-      pending "implementar essa situacao"
     end
   end
 end

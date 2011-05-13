@@ -4,7 +4,6 @@
 pt:
   cpf_cadastrado: "O CPF já está cadastrado."
   email_deve_ser_valido: "O email informado deve ser válido."  
-  confirmacao_email: "Os emails informados devem ser iguais."
 
   mongo_mapper:
     errors:
@@ -14,6 +13,8 @@ pt:
             cpf:
               taken: "O CPF informado já está cadastrado."
               invalid: "CPF inválido."
+            email:
+              confirmation: "Os emails informados devem ser iguais."
       messages:
         blank: "%{attribute} deve ser preenchido."
 
@@ -27,4 +28,3 @@ pt:
       messages:
         blank: "%{attribute} deve ser preenchido."
         taken: "O CPF informado já está cadastrado."
-
