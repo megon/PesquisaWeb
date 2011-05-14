@@ -5,6 +5,7 @@ PesquisaWeb::Application.routes.draw do
   resources :indicacoes
 
   post "passos/create"
+  get  "passos/edit"
   match 'passos/:id' => 'passos#show', :via => :get
 
 #  match 'participantes/:controller/:action/:passo_atual'

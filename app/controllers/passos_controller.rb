@@ -23,4 +23,10 @@ class PassosController < ApplicationController
   def show
     render(:template => "passos/#{params[:id]}")
   end
+
+  def edit
+    @participante = Participante.find_by_cpf(session[:cpf])
+    @passo = @participante.respostas.find_by_passo_id(params[:id_passo_anterior].to_i)
+    render(:template => "passos/#{params[:id_passo_anterior]}")
+  end
 end
