@@ -20,7 +20,7 @@
 
         <%= form_for :indicacao, :url => { :action  => 'create' } do |f| %>
           <table>
-            <div id="convidado">
+            <div class="convidado">
               <tr>  
                 <td>
                   <%= f.label(:nome)%>
@@ -39,13 +39,53 @@
               </tr>
             </div>
           </table>
-          <%= f.submit "Convidar", :class =>"button green" %>
+          <%= f.submit "Enviar", :class =>"button green" %>
+          ou
+          <a href="#" id="addConvidado">Convide mais um amigo</a>
         <%end%>
       </div>
 		</div>
 	</div>
 <script type="text/javascript">
 $().ready(function() {
-	$("#passo_form").validate();
+        alert($('#convidado').html());
+				var nextUrlId = 2;
+				$('div.convidado').click(function(){
+					$('<p />').attr('id', 'urlParagraph' + nextUrlId)
+							  .text("URL: ")
+							  .appendTo('#inputBoxes');
+					$('<input />').attr({'type':'text', 'id':'url' + nextUrlId})
+								  .appendTo('#urlParagraph' + nextUrlId);
+					nextUrlId++;
+				});
 });
 </script>
+
+
+<html>
+	<head>
+		<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.5.1/jquery.min.js"></script>
+	</head>
+	<body>
+		<form id="myForm" action="somePage.php" method="get">
+			<div id="inputBoxes">
+				<p id="nameParagraph">Name: <input type="text" id="name" /></p>
+				<p id="urlParagraph1">URL: <input type="text" id="url1" /></p>
+			</div>
+			<p><input type="submit" id="submit" /> or <a href="#" id="AddUrl">Add another URL</a></p>
+		</form>
+	</body>
+		<script type="text/javascript">
+			$(document).ready(function(){
+				var nextUrlId = 2;
+				$('#AddUrl').click(function(){
+					$('<p />').attr('id', 'urlParagraph' + nextUrlId)
+							  .text("URL: ")
+							  .appendTo('#inputBoxes');
+					$('<input />').attr({'type':'text', 'id':'url' + nextUrlId})
+								  .appendTo('#urlParagraph' + nextUrlId);
+					nextUrlId++;
+				});
+			});
+		</script>
+</html>

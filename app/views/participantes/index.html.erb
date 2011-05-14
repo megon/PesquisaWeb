@@ -1,43 +1,84 @@
-<%= form_for :participante, :url => { :action  => 'create' } do |f| %>
-    <fieldset id="cadastro_participante">
-      <ol>
-        <li>
-          <%= f.label(:nome)%>
-          <%= f.text_field :nome, :size => 35, :class=>"input_text", :maxlength => 100 %>
-          <div class="clean-red">
-            <%= f.error_message_on :nome%>
-          </div>
-        </li>
-        <li>
-          <%= f.label(:email)%>
-          <%= f.text_field :email, :size => 35, :class=>"input_text", :maxlength => 100 %>
-          <div class="clean-red">
-            <%= f.error_message_on :email%>
-          </div>
-        </li>
-        <li>
-          <%= f.label(:email_confirmation)%>
-          <%= f.text_field :email_confirmation, :size => 35, :class=>"input_text", :maxlength => 100 %>
-          <div class="clean-red">
-            <%= f.error_message_on :email_confirmation%>
-          </div>
-        </li>
-        <li>
-          <%= f.label(:cpf)%>
-          <%= f.text_field :cpf, :size => 20, :class=>"input_text", :maxlength => 11 %>
-          <div class="clean-red">
-            <%= f.error_message_on :cpf%>
-          </div>
-        </li>
-        <li>
-          <%= f.label(:data_nascimento)%>
-          <%= f.text_field :data_nascimento, :size => 20, :class=>"input_text", :maxlength => 10, :readonly => true %>
-          <div class="clean-red">
-            <%= f.error_message_on :data_nascimento%>
-          </div>
-        </li>
-       </ol>
-    </fieldset>
-    <%= f.submit "Participar", :class =>"button green" %>
-<%end%>
+		<div id="pesquisaweb">
+			<div id="conteudo">
+				<div id="cabecalho">
+					<h1 class="slogan">Pesquisaweb, sua pesquisa na Internet.</h1>
+				</div>
+				<div id="participante">
+					<div id="instrucoes">
+						<h2 class="texto_instrucoes">Participe de nossa pesquisa e concorra a prêmios</h2>
+						<p class="texto_validacao">(Como trata-se de uma pesquisa de exemplo, algumas validações estão desativadas.)</p>
+					</div>
+				
+					<div id="dados">
+            <%= form_for :participante, :url => { :action  => 'create' } do |f| %>
+                <fieldset id="cadastro_participante">
+                  <ol>
+                    <li>
+                      <%= f.label(:nome)%>
+                      <%= f.text_field :nome, :size => 35, :class=>"input_text", :maxlength => 100 %>
+                      <div class="clean-red">
+                        <%= f.error_message_on :nome%>
+                      </div>
+                    </li>
+                    <li>
+                      <%= f.label(:email)%>
+                      <%= f.text_field :email, :size => 35, :class=>"input_text", :maxlength => 100 %>
+                      <div class="clean-red">
+                        <%= f.error_message_on :email%>
+                      </div>
+                    </li>
+                    <li>
+                      <%= f.label(:email_confirmation)%>
+                      <%= f.text_field :email_confirmation, :size => 35, :class=>"input_text", :maxlength => 100 %>
+                      <div class="clean-red">
+                        <%= f.error_message_on :email_confirmation%>
+                      </div>
+                    </li>
+                    <li>
+                      <%= f.label(:cpf)%>
+                      <%= f.text_field :cpf, :size => 20, :class=>"input_text", :maxlength => 11 %>
+                      <div class="clean-red">
+                        <%= f.error_message_on :cpf%>
+                      </div>
+                    </li>
+                    <li>
+                      <%= f.label(:data_nascimento)%>
+                      <%= f.text_field :data_nascimento, :size => 20, :class=>"input_text", :maxlength => 10, :readonly => true %>
+                      <div class="clean-red">
+                        <%= f.error_message_on :data_nascimento%>
+                      </div>
+                    </li>
+                   </ol>
+                </fieldset>
+                <%= f.submit "Participar", :class =>"button green" %>
+            <%end%>
+					</div>
+				</div>
+				<div id="propaganda">
+				</div>
+				
+			</div>
+		</div>
+    <script type="text/javascript">
+      if (typeof jQuery == 'undefined')
+      {
+	      document.write(unescape("%3Cscript src='javascripts/jquery-1.5.1.min.js' type='text/javascript'%3E%3C/script%3E"));
+	      document.write(unescape("%3Cscript src='javascripts/jquery-ui-1.8.11.custom.min.js' type='text/javascript'%3E%3C/script%3E"));
+        document.write(unescape("%3Cscript src='javascripts/jquery-ui-i18n.min.js' type='text/javascript'%3E%3C/script%3E"));
+      }
+    </script>
 
+    <script type="text/javascript">
+      var today = new Date()
+      var year = today.getFullYear();
+      var minDate = (year - 80)
+      var maxDate = (year - 10)
+      var defaultDate = today.getDay() + "/" + today.getMonth() + "/" + maxDate
+
+		  $(document).ready(function() {
+        $(function() {
+          $.datepicker.setDefaults( $.datepicker.regional[ "pt-BR" ] );
+          $("#participante_data_nascimento").datepicker({maxDate: maxDate, changeMonth: true, changeYear: true, yearRange: minDate + ":" + maxDate, defaultDate: defaultDate});
+        });
+      });
+    </script>
