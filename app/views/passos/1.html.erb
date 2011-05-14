@@ -1,13 +1,3 @@
-	<div class="wrapper">
-		<div id="content-wrapper">
-		
-			<div id="header">
-				<h1 class="title">Sua Pesquisa</h1>
-			</div><!-- header -->
-			<div id="header-bar">
-                <span id="step_definition" class="right">Você está no passo 1 de 2</span>
-			</div>
-			<div id="form-fields">
 		      <%= form_for :passo, :as => "passo", :url => {:action  => 'create'}, :html => {:id => "passo_form"} do |f| %>
 		          <%= f.hidden_field :passo_id, :value => "1" %>
 		          <fieldset id="dados_contato">
@@ -162,25 +152,3 @@
 		          	<%= f.submit(t(:proximo_passo), :class => "button green") %>
 				  </div>
 		      <%end%>
-			</div><!-- form-fields -->
-		</div><!-- content-wrapper -->
-		<div id="footer">
-			<p>Megon internet services - 2011</p>
-		</div>
-	</div><!-- wrapper -->
-
-<script type="text/javascript">
-
-  $(document).ready(function(){
-    $("#passo_form").validate();
-    $("#passo_telefone_residencial").mask("(99)9999-9999",{placeholder:" "});
-  });
-
-$(document).ready(function() {
-  $(function() {
-    $.datepicker.setDefaults( $.datepicker.regional[ "pt-BR" ] );
-    $("#passo_data_nascimento_1_filho").datepicker({maxDate: "-10Y", changeMonth: true, changeYear: true});
-  });
-});
-</script>
-

@@ -17,8 +17,35 @@
 </head>
 
 <body>
+	<div class="wrapper">
+		<div id="content-wrapper">
+			<div id="header">
+				<h1 class="title">Sua Pesquisa</h1>
+			</div><!-- header -->
+			<div id="header-bar">
+                <span id="step_definition" class="right">Você está no passo 1 de 2</span>
+			</div>
+			<div id="form-fields">	
+              <%= yield %>
+			</div><!-- form-fields -->
+		</div><!-- content-wrapper -->
+		<div id="footer">
+			<p>Megon internet services - 2011</p>
+		</div>
+	</div><!-- wrapper -->
 
-<%= yield %>
+<script type="text/javascript">
+  $(document).ready(function(){
+    $("#passo_form").validate();
+    $("#passo_telefone_residencial").mask("(99)9999-9999",{placeholder:" "});
+  });
 
+$(document).ready(function() {
+  $(function() {
+    $.datepicker.setDefaults( $.datepicker.regional[ "pt-BR" ] );
+    $("#passo_data_nascimento_1_filho").datepicker({maxDate: "-10Y", changeMonth: true, changeYear: true});
+  });
+});
+</script>
 </body>
 </html>
