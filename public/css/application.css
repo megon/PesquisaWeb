@@ -15,9 +15,9 @@ a:hover, a:focus {
 }
 
 h1 {
-  font-size:22px;
-  margin-top:31px;
+  font-size:32px;
   font-weight:normal;
+  text-shadow: 1px 1px white;
 }
 
 h2 {
@@ -32,8 +32,31 @@ body .wrapper {
   /*overflow: hidden;*/
 }
 
-#header {
-  width: 940px;
+body .wrapper #content-wrapper {
+  margin-top: 15px;
+  background-color: #FFF;
+  -moz-border-radius:4px 4px 4px 4px;
+  border-radius:4px 4px 4px 4px;  
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+  border-color: #E5E5E5 #DBDBDB #D2D2D2;
+  border-style: solid;
+  border-width: 1px;*	
+}
+
+body .wrapper #content-wrapper #form-fields #form-action {
+  background-color: #F9FBFF;
+  padding: 15px;
+}
+
+body .wrapper #content-wrapper #header {
+  -moz-border-radius:4px 4px 0px 0px;
+  border-radius:4px 4px 0px 0px;
+  height: 87px;
+  background-color: #F9FBFF;
+  border-bottom: solid 4px #E8EEFF;
+  padding: 15px;
+
+/*  width: 940px;
   top: 0px;
   height: 87px;
   background-color: #FFF;
@@ -42,17 +65,16 @@ body .wrapper {
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
   border-color: #E5E5E5 #DBDBDB #D2D2D2;
   border-style: solid;
-  border-width: 1px;
-  margin-bottom: 35px;
+  border-width: 1px;*/
 }
 
 
 
-.float-left{
+.left{
   float:left;
 }
-.float-right{
-  float:left;
+.right{
+  float:right;
 }
 
 /* Forms */
@@ -155,8 +177,12 @@ textarea.medium {
 
 fieldset {
   margin-top:10px;
-  border-top:1px solid #E5E2DE;
-  padding:0px 15px;
+  /*border-top:1px solid #E5E2DE;*/
+  padding:15px;
+}
+
+fieldset:hover {
+	background: rgba(0, 0, 255, 0.02);
 }
 
 legend {
@@ -185,9 +211,12 @@ legend {
     top: 1px;
 }
 .green {
-    background: -moz-linear-gradient(center top , #7DB72F, #4E7D0E) repeat scroll 0 0 transparent;
-    border: 1px solid #538312;
-    color: #E8F0DE;
+  background: -moz-linear-gradient(center top , #7DB72F, #4E7D0E) repeat scroll 0 0 transparent;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#7DB72F', endColorstr='#4E7D0E');
+  background: -webkit-gradient(linear, 0 0, 0 bottom, from(#7DB72F), to(#4E7D0E));
+  background: linear-gradient(#7DB72F, #4E7D0E);
+  border: 1px solid #538312;
+  color: #E8F0DE;
 }
 .green:hover {
     background: -moz-linear-gradient(center top , #6B9D28, #436B0C) repeat scroll 0 0 transparent;
@@ -195,10 +224,4 @@ legend {
 .green:active {
     background: -moz-linear-gradient(center top , #4E7D0E, #7DB72F) repeat scroll 0 0 transparent;
     color: #A9C08C;
-}
-
-fieldset {
-	padding-top: 10px;
-	padding-bottom: 10px;
-	background: rgba(0, 0, 0, 0.05);
 }
