@@ -56,7 +56,7 @@
 		                      ["SE"],  
 		                      ["SP"],  
 		                      ["TO"]
-		                ]), {}, {:class => "required"}%>
+		                ], @passo.estado), {}, {:class => "required"}%>
 		              </li>
 
 		              <li class="form-row form-text">
@@ -72,16 +72,16 @@
 		            <ol>
 		              <li class="form-row form-text">
 		                <%= f.label(:atualmente_esta, :class => "question")%>
-		                <%= f.radio_button :atualmente_esta, "solteiro"%><label><%= t :solteiro%></label>
-		                <%= f.radio_button :atualmente_esta, "casado"%><label><%= t :casado%></label>
-		                <%= f.radio_button :atualmente_esta, "separado"%><label><%= t :separado%></label>
-		                <%= f.radio_button :atualmente_esta, "viuvo"%><label><%= t :viuvo%></label>
+		                <label><%= f.radio_button :atualmente_esta, "solteiro"%><%= t :solteiro%></label>
+		                <label><%= f.radio_button :atualmente_esta, "casado"%><%= t :casado%></label>
+		                <label><%= f.radio_button :atualmente_esta, "separado"%><%= t :separado%></label>
+		                <label><%= f.radio_button :atualmente_esta, "viuvo"%><%= t :viuvo%></label>
 		              </li>
 
 		              <li class="form-row form-text">
 		                <%= f.label(:tem_filhos, :class => "question")%>
-		                <%= f.radio_button :tem_filhos, "sim"%><label><%= t :sim%></label>
-		                <%= f.radio_button :tem_filhos, "nao"%><label><%= t :nao%></label>
+		                <label><%= f.radio_button :tem_filhos, "sim"%><%= t :sim%></label>
+		                <label><%= f.radio_button :tem_filhos, "nao"%><%= t :nao%></label>
 		              </li>
 
 		              <li class="form-row form-text">
@@ -99,13 +99,13 @@
 		                      ["8"],  
 		                      ["9"],  
 		                      ["10"]
-		                ]) %>
+		                ], @passo.quantos_filhos) %>
 		              </li>
 
 		              <li class="form-row form-text">
 		                <%= f.label(:sexo_filho, :class => "question")%>
-		                <%= f.radio_button :sexo_1_filho, "masculino"%><label><%= t :masculino%></label>
-		                <%= f.radio_button :sexo_1_filho, "feminino"%><label><%= t :feminino%></label>
+		                <label><%= f.radio_button :sexo_1_filho, "masculino"%><%= t :masculino%></label>
+		                <label><%= f.radio_button :sexo_1_filho, "feminino"%><%= t :feminino%></label>
 		              </li>
 
 		              <li class="form-row form-text">
@@ -115,8 +115,8 @@
 
 		              <li class="form-row form-text">
 		                <%= f.label(:mora_com_voce, :class => "question")%>
-		                <%= f.radio_button :mora_com_voce_1_filho, "sim"%><label><%= t :sim%></label>
-		                <%= f.radio_button :mora_com_voce_1_filho, "nao"%><label><%= t :nao%></label>
+		                <label><%= f.radio_button :mora_com_voce_1_filho, "sim"%><%= t :sim%></label>
+		                <label><%= f.radio_button :mora_com_voce_1_filho, "nao"%><%= t :nao%></label>
 		              </li>
 
 		            </ol>
@@ -138,12 +138,12 @@
 		                      ["Doutorado"],  
 		                      ["MBA"],   
 		                      ["Pós-doutorado"]
-		                ]) %>
+		                ], @passo.grau_instrucao) %>
 		              </li>
 		              <li class="form-row form-text">
 		                <%= f.label(:estuda_momento, :class => "question-long")%>
-		                <%= f.radio_button :estuda_momento, "sim"%><label><%= t :sim%></label>
-		                <%= f.radio_button :estuda_momento, "nao"%><label><%= t :nao%></label>
+		                <label><%= f.radio_button :estuda_momento, "sim"%><%= t :sim%></label>
+		                <label><%= f.radio_button :estuda_momento, "nao"%><%= t :nao%></label>
 		              </li>
 
 		             </ol>
