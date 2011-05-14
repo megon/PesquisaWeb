@@ -5,12 +5,12 @@ pt:
   helpers:
     label:
       passo:
-        endereco: "Endereço:"
-        numero: "Número:"
-        bairro: "Bairro:"
-        cidade: "Cidade:"
-        estado: "Estado:"
-        ddd_residencial: "DDD:"
+        endereco: "* Endereço:"
+        numero: "* Número:"
+        bairro: "* Bairro:"
+        cidade: "* Cidade:"
+        estado: "* Estado:"
+        telefone_residencial: "* Telefone residencial:"
         atualmente_esta: "Atualmente você está?"
         tem_filhos: "Você tem filhos?"
         quantos_filhos: "Quantos filhos?"
@@ -33,7 +33,7 @@ pt:
         renda: "Informe sua renda mensal familiar e individual. (Incluir salários, bônus, comissões, aluguéis, etc)"
         renda_individual: "Renda individual:"
         renda_familiar: "Renda familiar:"
-        cartao_credito: "Você possui cartão de crédito?"
+        cartao_credito: "* Você possui cartão de crédito?"
         quais_cartoes_credito: "Quais?"
         visa: "VISA"
         mastercard: "Mastercard"
