@@ -1,61 +1,63 @@
-	<div class="wrapper">
-		<div id="header">
-			<img height="23" width="156" src="images/megon-logo.png" alt="Megon" style="float: left; margin-top: 6px;">
-			<div id="site_menu" class="left">
-                <p>Você está em 2/2 </p>
-			</div><!-- site_menu -->
-		</div>
-	</div><!-- header -->
-	<div class="wrapper">
-		<div id="content">
       <%= form_for :passo, :url => { :action  => 'create' }, :html => {:id => "passo_form"} do |f| %>
           <%= f.hidden_field :passo_id, :value => "2" %>
           <fieldset id="sua_casa">
             <legend>Sua casa</legend>
             <ol>
               <li class="form-row form-text">
-                <%= f.label(:situacao_casa, :class => "question")%><br>
-                <%= f.select :situacao_casa, 
-                     options_for_select([
-                      ["Selecione uma opção", ""],  
-                      ["Alugada"],  
-                      ["Própria quitada"],  
-                      ["Própria financiada"],  
-                      ["Emprestada de terceiros"]
-                ]) %>
+                <%= f.label(:situacao_casa, :class => "question-long")%>
+				<div>
+	                <%= f.select :situacao_casa, 
+	                     options_for_select([
+	                      ["Selecione uma opção", ""],  
+	                      ["Alugada"],  
+	                      ["Própria quitada"],  
+	                      ["Própria financiada"],  
+	                      ["Emprestada de terceiros"]
+	                ]) %>
+				</div>
               </li>
 
               <li class="form-row form-text">
-                <%= f.label(:eletrodomesticos, :class => "question")%><br>
-
-                <%= f.label(:tv_em_cores)%>
-                <%= f.text_field :tv_em_cores, :size => 4, :maxlength => 2, :value => 0, :class => "number" %><br>
-
-                <%= f.label(:radio)%>
-                <%= f.text_field :radio, :size => 4, :maxlength => 2, :value => 0, :class => "number" %><br>
-
-                <%= f.label(:dvd)%>
-                <%= f.text_field :dvd, :size => 4, :maxlength => 2, :value => 0, :class => "number" %><br>
-
-                <%= f.label(:home_theater)%>
-                <%= f.text_field :home_theater, :size => 4, :maxlength => 2, :value => 0, :class => "number" %><br>
-
-                <%= f.label(:notebook)%>
-                <%= f.text_field :notebook, :size => 4, :maxlength => 2, :value => 0, :class => "number" %><br>
-
-                <%= f.label(:tablet)%>
-                <%= f.text_field :tablet, :size => 4, :maxlength => 2, :value => 0, :class => "number" %><br>
-
-                <%= f.label(:mp3)%>
-                <%= f.text_field :mp3, :size => 4, :maxlength => 2, :value => 0, :class => "number" %><br>
-
+                <%= f.label(:eletrodomesticos, :class => "question-long")%><br>
+				<ul style="float:left; display: block; width: 260px;">
+			       <li class="form-sublist form-text">
+		              <%= f.label(:tv_em_cores)%>
+		              <%= f.text_field :tv_em_cores, :size => 4, :maxlength => 2, :value => 0, :class => "number" %>
+				   </li>
+			       <li class="form-sublist form-text">
+	                <%= f.label(:radio)%>
+	                <%= f.text_field :radio, :size => 4, :maxlength => 2, :value => 0, :class => "number" %>
+				   </li>
+			       <li class="form-sublist form-text">
+	                <%= f.label(:dvd)%>
+	                <%= f.text_field :dvd, :size => 4, :maxlength => 2, :value => 0, :class => "number" %>
+				   </li>
+				</ul>
+				<ul style="float:left; display: block; width: 260px;">
+			       <li class="form-sublist form-text">
+	                <%= f.label(:home_theater)%>
+	                <%= f.text_field :home_theater, :size => 4, :maxlength => 2, :value => 0, :class => "number" %>
+				   </li>
+			       <li class="form-sublist form-text">
+	                <%= f.label(:notebook)%>
+	                <%= f.text_field :notebook, :size => 4, :maxlength => 2, :value => 0, :class => "number" %>
+				   </li>
+			       <li class="form-sublist form-text">
+	                <%= f.label(:tablet)%>
+	                <%= f.text_field :tablet, :size => 4, :maxlength => 2, :value => 0, :class => "number" %>
+				   </li>
+			       <li class="form-sublist form-text">
+	                <%= f.label(:mp3)%>
+	                <%= f.text_field :mp3, :size => 4, :maxlength => 2, :value => 0, :class => "number" %>
+				   </li>
+				</ul>
               </li>
 
               <li class="form-row form-text">
                 <%= f.label(:possui_tv_assinatura, :class => "question")%>
                 <label><%= f.radio_button :possui_tv_por_assinatura, "sim"%><%= t :sim%></label>
-                <label><%= f.radio_button :possui_tv_por_assinatura, "nao"%><%= t :nao%></label><br>
-                <%= f.label(:operadora_tv_assinatura)%><br>
+                <label><%= f.radio_button :possui_tv_por_assinatura, "nao"%><%= t :nao%></label>
+                <%= f.label(:operadora_tv_assinatura)%>
                 <%= f.select :operadora_tv_assinatura, 
                      options_for_select([
                       ["Selecione uma opção", ""],  
@@ -65,6 +67,7 @@
                       ["Outra"]
                 ]) %>
               </li>
+
              </ol>
           </fieldset>
 
@@ -72,39 +75,44 @@
             <legend>Seus investimentos</legend>
             <ol>
               <li class="form-row form-text">
-              <%= f.label(:renda, :class => "question")%><br>
-                <%= f.label(:renda_individual)%>
-                <%= f.select :renda_individual, 
-                     options_for_select([
-                      ["Selecione uma opção", ""],
-                      ["Não possuo renda individual"],  
-                      ["Até R$545,00"],  
-                      ["De R$546,00 até R$1.040,00"],  
-                      ["De R$1.041,00 até R$2.600,00"],  
-                      ["De R$2.601,00 até R$3.900,00"],  
-                      ["De R$3.901,00 até R$6.500,00"],  
-                      ["De R$6.501,00 até R$9.100,00"],  
-                      ["Acima de R$9.101,00"]
-                ]) %><br>
+	              <%= f.label(:renda, :class => "question-long")%><br>
+		            <div class="left">    
+		                <%= f.label(:renda_individual)%>
+		                <%= f.select :renda_individual, 
+		                     options_for_select([
+		                      ["Selecione uma opção", ""],
+		                      ["Não possuo renda individual"],  
+		                      ["Até R$545,00"],  
+		                      ["De R$546,00 até R$1.040,00"],  
+		                      ["De R$1.041,00 até R$2.600,00"],  
+		                      ["De R$2.601,00 até R$3.900,00"],  
+		                      ["De R$3.901,00 até R$6.500,00"],  
+		                      ["De R$6.501,00 até R$9.100,00"],  
+		                      ["Acima de R$9.101,00"]
+		                ]) %>
+					</div>
+					<div class="left" style="padding-left: 35px;">
+		                <%= f.label(:renda_familiar)%>
+		                <%= f.select :renda_familiar, 
+		                     options_for_select([
+		                      ["Selecione uma opção", ""],
+		                      ["Até R$545,00"],  
+		                      ["De R$546,00 até R$1.040,00"],  
+		                      ["De R$1.041,00 até R$2.600,00"],  
+		                      ["De R$2.601,00 até R$3.900,00"],  
+		                      ["De R$3.901,00 até R$6.500,00"],  
+		                      ["De R$6.501,00 até R$9.100,00"],  
+		                      ["Acima de R$9.101,00"]
 
-                <%= f.label(:renda_familiar)%>
-                <%= f.select :renda_familiar, 
-                     options_for_select([
-                      ["Selecione uma opção", ""],
-                      ["Até R$545,00"],  
-                      ["De R$546,00 até R$1.040,00"],  
-                      ["De R$1.041,00 até R$2.600,00"],  
-                      ["De R$2.601,00 até R$3.900,00"],  
-                      ["De R$3.901,00 até R$6.500,00"],  
-                      ["De R$6.501,00 até R$9.100,00"],  
-                      ["Acima de R$9.101,00"]
-
-                ]) %>
-
+		                ]) %>
+				   </div>
+			  </li>
               <li class="form-row form-text">
-                <%= f.label(:cartao_credito, :class => "question")%><br>
-                <label><%= f.radio_button :cartao_credito, "sim", :class => "required"%><%= t :sim%></label><br>
-                <label><%= f.radio_button :cartao_credito, "nao"%><%= t :nao%></label><br>
+                <%= f.label(:cartao_credito, :class => "question-long left")%><br>
+                <div style="width: 120px;">
+                	<label><%= f.radio_button :cartao_credito, "sim", :class => "required"%><%= t :sim%></label>
+                	<label><%= f.radio_button :cartao_credito, "nao"%><%= t :nao%></label>
+				</div>
                 <%= f.label(:quais_cartoes_credito)%><br>
                 <%= f.label(:visa)%><br>
                 <%= f.check_box :visa, :class => "checkbox", :validate => "required:true, minlength:2"%>
@@ -119,13 +127,11 @@
 
             </ol>
           </fieldset>
-          <%= link_to(t(:passo_anterior), {:controller => "passos", :action => "edit", :id_passo_anterior => 1}, :class => "button green") %>
-          <%= f.submit(t(:proximo_passo), :class => "button green") %>
+
+		  <div id="form-action">
+			  <%= link_to(t(:passo_anterior), {:controller => "passos", :action => "edit", :id_passo_anterior => 1}, :class => "button green") %>
+          	 <%= f.submit(t(:proximo_passo), :class => "button green") %>
+		  </div>
+          
       <%end%>
-		</div>
-	</div>
-<script type="text/javascript">
-$().ready(function() {
-	$("#passo_form").validate();
-});
-</script>
+
