@@ -52,8 +52,8 @@ pt:
   masculino: "Masculino"
   feminino: "Feminino"
 
-  proximo_passo: "Ir para o próximo passo"
-
+  proximo_passo: "Próximo passo"
+  passo_anterior: "Passo anterior"
   
 
   
