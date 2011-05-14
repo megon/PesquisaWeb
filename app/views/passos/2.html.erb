@@ -53,9 +53,8 @@
 
               <li class="form-row form-text">
                 <%= f.label(:possui_tv_assinatura, :class => "question")%>
-                <%= f.radio_button :possui_tv_por_assinatura, "sim"%><label><%= t :sim%></label>
-                <%= f.radio_button :possui_tv_por_assinatura, "nao"%><label><%= t :nao%></label><br>
-
+                <label><%= f.radio_button :possui_tv_por_assinatura, "sim"%><%= t :sim%></label>
+                <label><%= f.radio_button :possui_tv_por_assinatura, "nao"%><%= t :nao%></label><br>
                 <%= f.label(:operadora_tv_assinatura)%><br>
                 <%= f.select :operadora_tv_assinatura, 
                      options_for_select([
@@ -104,17 +103,17 @@
 
               <li class="form-row form-text">
                 <%= f.label(:cartao_credito, :class => "question")%><br>
-                <label><%= t :sim%></label><%= f.radio_button :cartao_credito, "sim", :class => "required"%><br>
-                <label><%= t :nao%></label><%= f.radio_button :cartao_credito, "nao"%><br>
+                <label><%= f.radio_button :cartao_credito, "sim", :class => "required"%><%= t :sim%></label><br>
+                <label><%= f.radio_button :cartao_credito, "nao"%><%= t :nao%></label><br>
                 <%= f.label(:quais_cartoes_credito)%><br>
-                <%= f.check_box :visa, :class => "checkbox", :validate => "required:true, minlength:2"%>
                 <%= f.label(:visa)%><br>
-                <%= f.check_box :mastercard%>
+                <%= f.check_box :visa, :class => "checkbox", :validate => "required:true, minlength:2"%>
                 <%= f.label(:mastercard)%><br>
-                <%= f.check_box :american_express%>
+                <%= f.check_box :mastercard%>
                 <%= f.label(:american_express)%><br>
-                <%= f.check_box :outros%>
+                <%= f.check_box :american_express%>
                 <%= f.label(:outros)%>
+                <%= f.check_box :outros%>
 
               </li>
 
