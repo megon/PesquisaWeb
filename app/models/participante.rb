@@ -8,6 +8,14 @@ class Participante
   key :passo_atual, Integer, :default => 1
   attr_accessor :email_confirmation
 
+  validates :nome, :presence => true
+  validates :email, :presence => true, :confirmation => true
+  validates :cpf, :presence => true, :cpf => true, :uniqueness => true
+  validates :data_nascimento, :presence => true
+  validates_format_of     :email,
+                          :with       => /^([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})$/i,
+                          :message    => I18n.t('email_deve_ser_valido')
+
   has_many :respostas
   has_many :indicacoes
 
