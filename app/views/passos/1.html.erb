@@ -5,8 +5,7 @@
                 <p>Você está em 1/2 </p>
 			</div><!-- site_menu -->
 		</div>
-	</div><!-- header -->
-	<div class="wrapper">
+
 		<div id="content">
 
       <%= form_for :passo, :as => "passo", :url => {:action  => 'create'}, :html => {:id => "passo_form"} do |f| %>
@@ -137,7 +136,7 @@
             <legend>Escolaridade</legend>
             <ol>
               <li class="form-row form-text">
-                <%= f.label(:grau_instrucao, :class => "question")%>
+                <%= f.label(:grau_instrucao, :class => "question-long")%>
                 <%= f.select :grau_instrucao, 
                      options_for_select([
                       ["Selecione uma opção", ""],  
@@ -153,7 +152,7 @@
               </li>
 
               <li class="form-row form-text">
-                <%= f.label(:estuda_momento, :class => "question")%>
+                <%= f.label(:estuda_momento, :class => "question-long")%>
                 <%= f.radio_button :estuda_momento, "sim"%><label><%= t :sim%></label>
                 <%= f.radio_button :estuda_momento, "nao"%><label><%= t :nao%></label>
               </li>
