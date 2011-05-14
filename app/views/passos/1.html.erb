@@ -3,12 +3,10 @@
 		
 			<div id="header">
 				<h1 class="title">Sua Pesquisa</h1>
-				
-				<div id="site_menu">
-	                <p>Você está em 1/2 </p>
-				</div><!-- header -->
+			</div><!-- header -->
+			<div id="header-bar">
+                <span id="step_definition" class="right">Você está no passo 1 de 2</span>
 			</div>
-
 			<div id="form-fields">
 		      <%= form_for :passo, :as => "passo", :url => {:action  => 'create'}, :html => {:id => "passo_form"} do |f| %>
 		          <%= f.hidden_field :passo_id, :value => "1" %>
@@ -152,7 +150,6 @@
 		                      ["Pós-doutorado"]
 		                ]) %>
 		              </li>
-
 		              <li class="form-row form-text">
 		                <%= f.label(:estuda_momento, :class => "question-long")%>
 		                <%= f.radio_button :estuda_momento, "sim"%><label><%= t :sim%></label>

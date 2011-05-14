@@ -1,5 +1,5 @@
 body {
-  background: url("http://www.designfollow.com/wp-content/themes/zillapress/images/bg-body.gif") repeat scroll 0 0 transparent;
+  background: url("../images/bg-body.png") repeat scroll 0 0 transparent;
   /*background:none repeat scroll 0 0 #F1F1F1;*/
   font:13px/1.53846 "Lucida Grande","Lucida Sans Unicode",arial,sans-serif;
   color:#493F2D;
@@ -16,7 +16,7 @@ a:hover, a:focus {
 
 h1 {
   font-size:32px;
-  font-weight:normal;
+  font-weight:bold;
   text-shadow: 1px 1px white;
 }
 
@@ -44,7 +44,7 @@ body .wrapper #content-wrapper {
 }
 
 body .wrapper #content-wrapper #form-fields #form-action {
-  background-color: #F9FBFF;
+  background-color: #EFF2F7;
   padding: 15px;
 }
 
@@ -55,20 +55,29 @@ body .wrapper #content-wrapper #header {
   background-color: #F9FBFF;
   border-bottom: solid 4px #E8EEFF;
   padding: 15px;
+}
 
-/*  width: 940px;
-  top: 0px;
-  height: 87px;
-  background-color: #FFF;
-  -moz-border-radius:0px 0px 4px 4px;
-  border-radius:0px 0px 4px 4px;  
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
-  border-color: #E5E5E5 #DBDBDB #D2D2D2;
-  border-style: solid;
-  border-width: 1px;*/
+body .wrapper #content-wrapper #header-bar {
+  text-align: right;
+  text-shadow: 0 1px 0 #FFF;
+  padding: 15px;
 }
 
 
+body .wrapper #content-wrapper #header-bar #step_definition {
+  color:#A8A8A8;
+  font-size: 0.8em;
+}
+
+body .wrapper #footer{
+  height: 70px;
+}
+
+body .wrapper #footer p{
+  color:#A8A8A8;
+  font-size: 0.8em;
+  text-shadow: 0 1px 0 #FFF;
+}
 
 .left{
   float:left;
@@ -117,9 +126,16 @@ textarea.medium {
 
 .form-text input, .form-textarea textarea {
   padding:6px 2px 6px 7px;
-  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.15) inset;
+  box-shadow: 0 2px 2px rgba(0, 0, 0, 0.08) inset;
+ -moz-box-shadow: 0 2px 2px rgba(0, 0, 0, 0.08) inset;
+  color:#5E5E5E;
 }
 
+.form-text input:hover, .form-textarea textarea:hover {
+  box-shadow: 0 2px 2px rgba(0, 0, 0, 0.15) inset;
+ -moz-box-shadow: 0 2px 2px rgba(0, 0, 0, 0.15) inset;
+  color:#000;
+}
 
 
 
@@ -155,8 +171,10 @@ textarea.medium {
   width:350px;
 }
 
-.form-row.error {
-  background:url(/images/error.gif) no-repeat scroll 577px 11px #FFF7E3;
+label.error {
+  margin-left: 5px;
+  color: #F00;
+  font-size: 09px;
 }
 
 .form-row label.question {
@@ -173,22 +191,23 @@ textarea.medium {
   font-weight: bold;  
 }
 
-
-
 fieldset {
+  clear: both;
   margin-top:10px;
   /*border-top:1px solid #E5E2DE;*/
   padding:15px;
 }
 
 fieldset:hover {
+	clear: both;
 	background: rgba(0, 0, 255, 0.02);
 }
 
 legend {
-  padding:5px 10px;
   text-transform:uppercase;    
-  color:#635D57;
+  color:#8F0206;
+  font-size: 2em;
+  text-shadow: 1px 1px rgba(237, 237, 237, 1);
 }
 
 .button {
@@ -219,9 +238,15 @@ legend {
   color: #E8F0DE;
 }
 .green:hover {
-    background: -moz-linear-gradient(center top , #6B9D28, #436B0C) repeat scroll 0 0 transparent;
+  background: -moz-linear-gradient(center top , #6B9D28, #436B0C) repeat scroll 0 0 transparent;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#6B9D28', endColorstr='#436B0C');
+  background: -webkit-gradient(linear, 0 0, 0 bottom, from(#6B9D28), to(#436B0C));
+  background: linear-gradient(#6B9D28, #436B0C);
 }
 .green:active {
     background: -moz-linear-gradient(center top , #4E7D0E, #7DB72F) repeat scroll 0 0 transparent;
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#4E7D0E', endColorstr='#7DB72F');
+    background: -webkit-gradient(linear, 0 0, 0 bottom, from(#4E7D0E), to(#7DB72F));
+    background: linear-gradient(#4E7D0E, #7DB72F);
     color: #A9C08C;
 }
