@@ -257,6 +257,7 @@ $.extend($.validator, {
 		email: "Digite um email válido.",
 		url: "Digite uma URL válida.",
 		date: "Digite uma data válida.",
+    dateBR: "Digite uma data válida.", 
 		dateISO: "Please enter a valid date (ISO).",
 		number: "Digite um número válido.",
 		digits: "Please enter only digits.",
@@ -744,6 +745,7 @@ $.extend($.validator, {
 		email: {email: true},
 		url: {url: true},
 		date: {date: true},
+    dateBR: {dateBR: true},
 		dateISO: {dateISO: true},
 		dateDE: {dateDE: true},
 		number: {number: true},
@@ -1013,6 +1015,23 @@ $.extend($.validator, {
 		date: function(value, element) {
 			return this.optional(element) || !/Invalid|NaN/.test(new Date(value));
 		},
+
+    dateBR: function(value, element) {
+	     //contando chars
+	    if(value.length!=10) return false;
+	    // verificando data
+	    var data        = value;
+	    var dia         = data.substr(0,2);
+	    var barra1      = data.substr(2,1);
+	    var mes         = data.substr(3,2);
+	    var barra2      = data.substr(5,1);
+	    var ano         = data.substr(6,4);
+	    if(data.length!=10||barra1!="/"||barra2!="/"||isNaN(dia)||isNaN(mes)||isNaN(ano)||dia>31||mes>12)return false;
+	    if((mes==4||mes==6||mes==9||mes==11)&&dia==31)return false;
+	    if(mes==2 && (dia>29||(dia==29&&ano%4!=0)))return false;
+	    if(ano < 1900)return false;
+	    return true;
+    },
 
 		// http://docs.jquery.com/Plugins/Validation/Methods/dateISO
 		dateISO: function(value, element) {
