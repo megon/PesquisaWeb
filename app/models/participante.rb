@@ -16,6 +16,8 @@ class Participante
                           :with       => /^([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})$/i,
                           :message    => I18n.t('email_deve_ser_valido')
 
+  before_save :extract_cpf_numbers
+
   has_many :respostas
   has_many :indicacoes
 
@@ -29,5 +31,10 @@ class Participante
 
   def add_indicacao(indicacao)
     self.indicacoes.push indicacao
+  end
+
+  private
+  def extract_cpf_numbers
+    self.cpf = cpf.scan(/\d+/).join
   end
 end
