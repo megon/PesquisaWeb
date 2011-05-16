@@ -69,18 +69,21 @@
     </script>
 
     <script type="text/javascript">
+/*
       var today = new Date()
       var year = today.getFullYear();
       var minDate = (year - 80)
       var maxDate = (year - 10)
       var defaultDate = today.getDay() + "/" + today.getMonth() + "/" + maxDate
-
+*/
 		  $(document).ready(function() {
         $("#participante_cpf").mask("999.999.999-99",{placeholder:" "});
         $("#participante_data_nascimento").mask("99/99/9999",{placeholder:" "});
+/*
         $(function() {
           $.datepicker.setDefaults( $.datepicker.regional[ "pt-BR" ] );
           $("#participante_data_nascimento").datepicker({maxDate: maxDate, changeMonth: true, changeYear: true, yearRange: minDate + ":" + maxDate, defaultDate: defaultDate});
         });
+*/
       });
     </script>
