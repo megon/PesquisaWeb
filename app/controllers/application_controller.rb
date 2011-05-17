@@ -1,5 +1,5 @@
 class ApplicationController < ActionController::Base
-  before_filter :verifica_sessao_participante
+  before_filter :verifica_sessao_participante, :set_locale
 
   protect_from_forgery
 
@@ -10,4 +10,7 @@ class ApplicationController < ActionController::Base
       end
     end
 
+    def set_locale
+      I18n.locale = "pt" || I18n.default_locale 
+    end
 end
