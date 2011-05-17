@@ -1,4 +1,5 @@
 ValidatesTimeliness.setup do |config|
+  config.parser.remove_us_formats
   # Extend ORM/ODMs for full support (:active_record, :mongoid).
   # config.extend_orms = [ :active_record ]
   #
