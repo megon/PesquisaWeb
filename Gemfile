@@ -19,6 +19,8 @@ group :development, :test do
 end
 
 gem "validates_as_cpf"
+gem 'validates_timeliness', '~> 3.0.2'
+
 gem 'dynamic_form'
 
 # Use unicorn as the web server
