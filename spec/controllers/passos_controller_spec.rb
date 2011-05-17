@@ -16,11 +16,6 @@ describe PassosController do
       response.should redirect_to :action =>"show", :id => @resposta.passo_id.to_int + 1
     end
 
-    it "deve ir para a pagina principal se participante nao existir" do
-      
-
-    end
-
     it "deve poder voltar para o passo anterior" do
       @participante = mock_model(Participante).as_null_object
       Participante.should_receive(:find_by_cpf).with(session[:cpf]).and_return(@participante)

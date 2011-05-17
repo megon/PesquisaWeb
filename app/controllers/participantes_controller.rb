@@ -1,4 +1,5 @@
 class ParticipantesController < ApplicationController
+  skip_before_filter :verifica_sessao_participante
 
   def index
   end
