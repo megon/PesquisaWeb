@@ -6,6 +6,8 @@ class ParticipantesController < ApplicationController
 
   def create
     @participante = Participante.new(params[:participante])
+    puts @participante.data_nascimento
+    puts I18n.l @participante.data_nascimento
     if @participante.save
       session[:cpf] = @participante.cpf
       redirect_to :controller => "passos", :action =>"show", :id => @participante.passo_atual
