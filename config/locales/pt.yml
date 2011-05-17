@@ -2,4 +2,6 @@ pt:
   errors:
       format: "%{message}"
 
-
+  date:
+      formats:
+        default: "%d/%m/%Y" 
