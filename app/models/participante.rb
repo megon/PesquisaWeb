@@ -4,7 +4,7 @@ class Participante
   key :nome, String
   key :email, String
   key :cpf, String
-  key :data_nascimento, String
+  key :data_nascimento, Date
   key :passo_atual, Integer, :default => 1
   attr_accessor :email_confirmation
 
