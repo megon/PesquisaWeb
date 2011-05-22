@@ -16,7 +16,7 @@ class Participante
                           :with       => /^([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})$/i,
                           :message    => I18n.t('email_deve_ser_valido')
 
-  before_validation :extract_cpf_numbers
+  before_validation :extract_cpf_numbers, :show_locale
 
   has_many :respostas
   has_many :indicacoes
@@ -36,5 +36,9 @@ class Participante
   private
   def extract_cpf_numbers
     self.cpf = cpf.scan(/\d+/).join
+  end
+
+  def show_locale
+    puts I18n.locale
   end
 end
