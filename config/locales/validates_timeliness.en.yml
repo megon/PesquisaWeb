@@ -15,7 +15,7 @@ en:
       time: '%H:%M:%S'
       datetime: '%Y-%m-%d %H:%M:%S'
 
-pt:
+pt_BR:
   errors:
     messages:
       invalid_date: "Data inválida. Formato: dd/mm/aaaa."
