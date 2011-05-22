@@ -1,0 +1,59 @@
+# Sample localization file for English. Add more files in this directory for other locales.
+# See http://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting points.
+
+pt_BR:
+  helpers:
+    label:
+      passo:
+        endereco: "* Endereço:"
+        numero: "* Número:"
+        bairro: "* Bairro:"
+        cidade: "* Cidade:"
+        estado: "* Estado:"
+        telefone_residencial: "* Telefone residencial:"
+        atualmente_esta: "Atualmente você está?"
+        tem_filhos: "Você tem filhos?"
+        quantos_filhos: "Quantos filhos?"
+        sexo_filho: "Sexo:"
+        data_nascimento_filho: "Data de nascimento:"
+        mora_com_voce: "Mora com você?"
+        grau_instrucao: "Qual o seu grau de instrução?"
+        estuda_momento: "Você está estudando no momento?"
+        situacao_casa: "Qual das seguintes situações melhor descreve a situação da sua casa?"
+        eletrodomesticos: "Dos itens abaixo, quais você possui e quantos? (Marque 0 quando não possuir nenhum)"
+        tv_em_cores: "TV em cores:"
+        radio: "Rádio:"
+        dvd: "DVD:"
+        home_theater: "Home theater:"
+        notebook: "Notebook:"
+        tablet: "Tablet:"
+        mp3: "MP3:"
+        possui_tv_assinatura: "Você possui TV por assinatura?"
+        operadora_tv_assinatura: "Qual a operadora?"
+        renda: "Informe sua renda mensal familiar e individual. (Incluir salários, bônus, comissões, aluguéis, etc)"
+        renda_individual: "Renda individual:"
+        renda_familiar: "Renda familiar:"
+        cartao_credito: "* Você possui cartão de crédito?"
+        quais_cartoes_credito: "Quais?"
+        visa: "VISA"
+        mastercard: "Mastercard"
+        american_express: "AmericanExpress"
+        dinners: "Dinners"
+        outros: "Outros"
+
+  solteiro: "Solteiro"
+  casado: "Casado ou vivendo com companheiro(a)"
+  separado: "Separado(a)/ desquitado(a)"
+  viuvo: "Viúvo(a)"
+
+  sim: "Sim"
+  nao: "Não"
+  
+  masculino: "Masculino"
+  feminino: "Feminino"
+
+  proximo_passo: "Próximo passo"
+  passo_anterior: "Passo anterior"
+  
+
+  
