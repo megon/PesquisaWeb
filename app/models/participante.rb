@@ -35,6 +35,8 @@ class Participante
 
   private
   def extract_cpf_numbers
-    self.cpf = cpf.scan(/\d+/).join
+    if self.cpf
+      self.cpf = cpf.scan(/\d+/).join
+    end
   end
 end
