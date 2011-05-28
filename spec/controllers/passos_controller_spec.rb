@@ -23,5 +23,9 @@ describe PassosController do
       get :edit, :id_passo_anterior => 1
       response.should render_template "passos/1"
     end
+
+    it "deve barrar tentativa de pular passos da pesquisa" do
+      pending "implementar filtro"
+    end
   end  
 end
