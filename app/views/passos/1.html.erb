@@ -76,12 +76,14 @@
 		                <label><%= f.radio_button :atualmente_esta, "casado"%><%= t :casado%></label>
 		                <label><%= f.radio_button :atualmente_esta, "separado"%><%= t :separado%></label>
 		                <label><%= f.radio_button :atualmente_esta, "viuvo"%><%= t :viuvo%></label>
+                    <%= f.radio_button :atualmente_esta, "nil", :hidden => "true", :checked => true%>
 		              </li>
 
 		              <li class="form-row form-text">
 		                <%= f.label(:tem_filhos, :class => "question")%>
 		                <label><%= f.radio_button :tem_filhos, "sim"%><%= t :sim%></label>
 		                <label><%= f.radio_button :tem_filhos, "nao"%><%= t :nao%></label>
+                    <%= f.radio_button :tem_filhos, "nil", :hidden => "true", :checked => true%>
 		              </li>
 
 		              <li class="form-row form-text">
@@ -106,6 +108,7 @@
 		                <%= f.label(:sexo_filho, :class => "question")%>
 		                <label><%= f.radio_button :sexo_1_filho, "masculino"%><%= t :masculino%></label>
 		                <label><%= f.radio_button :sexo_1_filho, "feminino"%><%= t :feminino%></label>
+                    <%= f.radio_button :sexo_1_filho, "nil", :hidden => "true", :checked => true%>
 		              </li>
 
 		              <li class="form-row form-text">
@@ -117,6 +120,7 @@
 		                <%= f.label(:mora_com_voce, :class => "question")%>
 		                <label><%= f.radio_button :mora_com_voce_1_filho, "sim"%><%= t :sim%></label>
 		                <label><%= f.radio_button :mora_com_voce_1_filho, "nao"%><%= t :nao%></label>
+                    <%= f.radio_button :mora_com_voce_1_filho, "nil", :hidden => true, :checked => true%>
 		              </li>
 
 		            </ol>
@@ -144,6 +148,7 @@
 		                <%= f.label(:estuda_momento, :class => "question-long")%>
 		                <label><%= f.radio_button :estuda_momento, "sim"%><%= t :sim%></label>
 		                <label><%= f.radio_button :estuda_momento, "nao"%><%= t :nao%></label>
+                    <%= f.radio_button :estuda_momento, "nil", :hidden => "true", :checked => true%>
 		              </li>
 
 		             </ol>
