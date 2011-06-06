@@ -26,9 +26,10 @@
 
 		              <li class="form-row form-text">
 		                <%= f.label(:estado, :class => "question")%>
+
+                    <%estado_selecionado= @passo.estado unless @passo.nil? %>
 		                <%= f.select :estado, 
 		                     options_for_select([
-		                      ["Selecione um estado", ""],  
 		                      ["AC"],  
 		                      ["AL"],  
 		                      ["AM"],  
@@ -56,7 +57,7 @@
 		                      ["SE"],  
 		                      ["SP"],  
 		                      ["TO"]
-		                ]), {}, {:class => "required"}%>
+		                ], estado_selecionado), {:prompt => "Selecione um estado"}, {:class => "required"}%>
 		              </li>
 
 		              <li class="form-row form-text">
@@ -87,10 +88,10 @@
 		              </li>
 
 		              <li class="form-row form-text">
+                    <%quantos_filhos_selecionado= @passo.quantos_filhos unless @passo.nil? %>
 		                <%= f.label(:quantos_filhos, :class => "question")%>
 		                <%= f.select :quantos_filhos, 
 		                     options_for_select([
-		                      ["Selecione uma opção", ""],  
 		                      ["1"],  
 		                      ["2"],  
 		                      ["3"],  
@@ -101,7 +102,7 @@
 		                      ["8"],  
 		                      ["9"],  
 		                      ["10"]
-		                ]) %>
+		                ], quantos_filhos_selecionado), {:prompt => "Selecione uma opção"} %>
 		              </li>
 
 		              <li class="form-row form-text">
@@ -130,10 +131,10 @@
 		            <legend>Escolaridade</legend>
 		            <ol>
 		              <li class="form-row form-text">
+                    <%grau_instrucao_selecionado= @passo.grau_instrucao unless @passo.nil? %>
 		                <%= f.label(:grau_instrucao, :class => "question-long")%>
 		                <%= f.select :grau_instrucao, 
 		                     options_for_select([
-		                      ["Selecione uma opção", ""],  
 		                      ["Primeiro grau"],  
 		                      ["Segundo grau"],  
 		                      ["Graduação"],  
@@ -142,7 +143,7 @@
 		                      ["Doutorado"],  
 		                      ["MBA"],   
 		                      ["Pós-doutorado"]
-		                ]) %>
+		                ], grau_instrucao_selecionado), {:prompt => "Selecione uma opção"} %>
 		              </li>
 		              <li class="form-row form-text">
 		                <%= f.label(:estuda_momento, :class => "question-long")%>

@@ -4,16 +4,17 @@
             <legend>Sua casa</legend>
             <ol>
               <li class="form-row form-text">
+                <%situacao_casa_selecionado= @passo.situacao_casa unless @passo.nil? %>
+
                 <%= f.label(:situacao_casa, :class => "question-long")%>
 				<div>
 	                <%= f.select :situacao_casa, 
 	                     options_for_select([
-	                      ["Selecione uma opção", ""],  
 	                      ["Alugada"],  
 	                      ["Própria quitada"],  
 	                      ["Própria financiada"],  
 	                      ["Emprestada de terceiros"]
-	                ]) %>
+	                ], situacao_casa_selecionado), {:prompt => "Selecione uma opção"} %>
 				</div>
               </li>
 
@@ -59,14 +60,15 @@
                 <label><%= f.radio_button :possui_tv_por_assinatura, "nao"%><%= t :nao%></label>
                 <%= f.radio_button :possui_tv_por_assinatura, "nil", :hidden => "true", :checked => true%>
                 <%= f.label(:operadora_tv_assinatura)%>
+
+                <%operadora_tv_assinatura_selecionado= @passo.operadora_tv_assinatura unless @passo.nil? %>
                 <%= f.select :operadora_tv_assinatura, 
                      options_for_select([
-                      ["Selecione uma opção", ""],  
                       ["NET"],  
                       ["SKY"],  
                       ["TVA"],  
                       ["Outra"]
-                ]) %>
+                ], operadora_tv_assinatura_selecionado), {:prompt => "Selecione uma opção"} %>
               </li>
 
              </ol>
@@ -79,9 +81,10 @@
 	              <%= f.label(:renda, :class => "question-long")%><br>
 		            <div class="left">    
 		                <%= f.label(:renda_individual)%>
+
+                    <%renda_individual_selecionado= @passo.renda_invididual unless @passo.nil? %>
 		                <%= f.select :renda_individual, 
 		                     options_for_select([
-		                      ["Selecione uma opção", ""],
 		                      ["Não possuo renda individual"],  
 		                      ["Até R$545,00"],  
 		                      ["De R$546,00 até R$1.040,00"],  
@@ -90,13 +93,14 @@
 		                      ["De R$3.901,00 até R$6.500,00"],  
 		                      ["De R$6.501,00 até R$9.100,00"],  
 		                      ["Acima de R$9.101,00"]
-		                ]) %>
+		                ], renda_individual_selecionado), {:prompt => "Selecione uma opção"} %>
 					</div>
 					<div class="left" style="padding-left: 35px;">
 		                <%= f.label(:renda_familiar)%>
+
+                    <%renda_familiar_selecionado= @passo.renda_familiar unless @passo.nil? %>
 		                <%= f.select :renda_familiar, 
 		                     options_for_select([
-		                      ["Selecione uma opção", ""],
 		                      ["Até R$545,00"],  
 		                      ["De R$546,00 até R$1.040,00"],  
 		                      ["De R$1.041,00 até R$2.600,00"],  
@@ -105,7 +109,7 @@
 		                      ["De R$6.501,00 até R$9.100,00"],  
 		                      ["Acima de R$9.101,00"]
 
-		                ]) %>
+		                ], renda_familiar_selecionado), {:prompt => "Selecione uma opção"} %>
 				   </div>
 			  </li>
               <li class="form-row form-text">
