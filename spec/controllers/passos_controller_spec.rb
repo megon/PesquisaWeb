@@ -3,6 +3,11 @@ require 'spec_helper'
 describe PassosController do
 
   describe "POST create" do
+    
+    before(:each) do
+      session[:cpf] = "16187834836"
+    end
+    
     it "deve salvar as respostas e redirecionar o participante para o proximo passo" do
       @participante = mock_model(Participante, :passo_atual => 1, :respostas => [])
       @resposta = mock_model(Resposta).as_null_object
