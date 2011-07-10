@@ -77,14 +77,14 @@
 		                <label><%= f.radio_button :atualmente_esta, "casado"%><%= t :casado%></label>
 		                <label><%= f.radio_button :atualmente_esta, "separado"%><%= t :separado%></label>
 		                <label><%= f.radio_button :atualmente_esta, "viuvo"%><%= t :viuvo%></label>
-                    <%= f.radio_button :atualmente_esta, "nil", :hidden => "true", :checked => true%>
+                    <%= f.radio_button :atualmente_esta, "nil", :style => "display: none;", :checked => @passo.nil? or @passo.atualmente_esta.nil?%>
 		              </li>
 
 		              <li class="form-row form-text">
 		                <%= f.label(:tem_filhos, :class => "question")%>
 		                <label><%= f.radio_button :tem_filhos, "sim"%><%= t :sim%></label>
 		                <label><%= f.radio_button :tem_filhos, "nao"%><%= t :nao%></label>
-                    <%= f.radio_button :tem_filhos, "nil", :hidden => "true", :checked => true%>
+                    <%= f.radio_button :tem_filhos, "nil", :style => "display: none;", :checked => @passo.nil? or @passo.tem_filhos.nil?%>
 		              </li>
 
 		              <li class="form-row form-text">
@@ -102,26 +102,20 @@
 		                      ["8"],  
 		                      ["9"],  
 		                      ["10"]
-		                ], quantos_filhos_selecionado), {:prompt => "Selecione uma opção"} %>
+		                ], quantos_filhos_selecionado), {:prompt => "Selecione uma opção"}, {:onchange => "adicionar_filhos(this.form);"} %>
 		              </li>
 
 		              <li class="form-row form-text">
-		                <%= f.label(:sexo_filho, :class => "question")%>
-		                <label><%= f.radio_button :sexo_1_filho, "masculino"%><%= t :masculino%></label>
-		                <label><%= f.radio_button :sexo_1_filho, "feminino"%><%= t :feminino%></label>
-                    <%= f.radio_button :sexo_1_filho, "nil", :hidden => "true", :checked => true%>
-		              </li>
-
-		              <li class="form-row form-text">
-		                <%= f.label(:data_nascimento_filho, :class => "question")%>
-		                <%= f.text_field :data_nascimento_1_filho, :size => 10, :maxlength => 10, :class => "dateBR" %>
-		              </li>
-
-		              <li class="form-row form-text">
-		                <%= f.label(:mora_com_voce, :class => "question")%>
-		                <label><%= f.radio_button :mora_com_voce_1_filho, "sim"%><%= t :sim%></label>
-		                <label><%= f.radio_button :mora_com_voce_1_filho, "nao"%><%= t :nao%></label>
-                    <%= f.radio_button :mora_com_voce_1_filho, "nil", :hidden => true, :checked => true%>
+                    <table id="tabela_filhos" width="70%">
+                      <tr>
+                        <th width="61">&nbsp;</th>
+                        <th width="200"> <div align="center"></div>
+                        <div align="center" ><%= f.label(:sexo_filho)%></div></th>
+                        <th width="198"><div align="center"><%= f.label(:data_nascimento_filho)%></div></th>
+                        <th width="119"><div align="center"><%= f.label(:mora_com_voce)%></div></th>
+                      </tr>
+                      <%= render(:partial => 'filhos', :locals => {:f => f, :total => 10})%>
+                    </table>
 		              </li>
 
 		            </ol>
@@ -149,7 +143,7 @@
 		                <%= f.label(:estuda_momento, :class => "question-long")%>
 		                <label><%= f.radio_button :estuda_momento, "sim"%><%= t :sim%></label>
 		                <label><%= f.radio_button :estuda_momento, "nao"%><%= t :nao%></label>
-                    <%= f.radio_button :estuda_momento, "nil", :hidden => "true", :checked => true%>
+                    <%= f.radio_button :estuda_momento, "nil", :style => "display: none;", :checked => @passo.nil? or @passo.estuda_momento.nil? %>
 		              </li>
 
 		             </ol>
@@ -158,3 +152,23 @@
 		          	<%= f.submit(t(:proximo_passo), :class => "button green") %>
 				  </div>
 		      <%end%>
+
+<script type="text/javascript">
+  function adicionar_filhos(f){
+    alert($("#passo_quantos_filhos").val());
+    var qtde_filhos = $("#passo_quantos_filhos").val();
+    var dados_filho_html = "<tr>";
+    dados_filho_html += '<td>';
+    dados_filho_html += '<input type="radio" name="sexo_filho_" id="sexo_filho_" value="masculino" >Masculino';
+    dados_filho_html += '</td>';
+    dados_filho_html += "</tr>";
+    alert(dados_filho_html);
+
+    $("#tabela_filhos").html('');
+    for (i=1; i<= qtde_filhos;i++){
+      $("#tabela_filhos").append(dados_filho_html);
+      $("#sexo_filho_").attr("name", "sexo_filho_"+i);
+      $("#sexo_filho_").attr("id", "sexo_filho_"+i);
+    }
+  }
+</script>

@@ -58,7 +58,7 @@
                 <%= f.label(:possui_tv_assinatura, :class => "question")%>
                 <label><%= f.radio_button :possui_tv_por_assinatura, "sim"%><%= t :sim%></label>
                 <label><%= f.radio_button :possui_tv_por_assinatura, "nao"%><%= t :nao%></label>
-                <%= f.radio_button :possui_tv_por_assinatura, "nil", :hidden => "true", :checked => true%>
+                <%= f.radio_button :possui_tv_por_assinatura, "nil", :hidden => "true", :checked => @passo.nil? or  @passo.possui_tv_por_assinatura.nil?%>
                 <%= f.label(:operadora_tv_assinatura)%>
 
                 <%operadora_tv_assinatura_selecionado= @passo.operadora_tv_assinatura unless @passo.nil? %>
@@ -117,6 +117,7 @@
                 <div style="width: 120px;">
                 	<label><%= f.radio_button :cartao_credito, "sim", :class => "required"%><%= t :sim%></label>
                 	<label><%= f.radio_button :cartao_credito, "nao"%><%= t :nao%></label>
+                	<%= f.radio_button :cartao_credito, "nil", :hidden => "true", :checked => @passo.nil? or @passo.cartao_credito.nil?%>
 
 				</div>
                 <%= f.label(:quais_cartoes_credito)%><br>
