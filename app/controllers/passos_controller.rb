@@ -9,7 +9,7 @@ class PassosController < ApplicationController
     @participante = Participante.find_by_cpf(session[:cpf])
     @resposta = Resposta.new(params[:passo])
     @participante.add_resposta @resposta
-    @participante.passo_atual = @resposta.passo_id  
+    @participante.passo_atual = @resposta.passo_id + 1
     @participante.save
 
     proximo_passo = @resposta.passo_id + 1
@@ -22,7 +22,7 @@ class PassosController < ApplicationController
 
   def show
     @participante = Participante.find_by_cpf(session[:cpf])
-    
+    puts @participante.passo_atual
     if @participante.passo_atual >= params[:id].to_i
       render(:template => "passos/#{params[:id]}")
     else
