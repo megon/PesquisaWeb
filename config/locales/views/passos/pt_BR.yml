@@ -14,6 +14,7 @@ pt_BR:
         atualmente_esta: "Atualmente você está?"
         tem_filhos: "Você tem filhos?"
         quantos_filhos: "Quantos filhos?"
+        filho: "filho"
         sexo_filho: "Sexo:"
         data_nascimento_filho: "Data de nascimento:"
         mora_com_voce: "Mora com você?"

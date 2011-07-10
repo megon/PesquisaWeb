@@ -1,0 +1,26 @@
+<%1.upto(total) do |numero|%>
+  <tr>
+    <td height="40"><%= f.label(numero)%></td>
+    <td height="24">
+      <div align="center">
+        <label><%= f.radio_button "sexo_filho_#{numero}", "masculino"%><%= t :masculino%></label>
+        <label><%= f.radio_button "sexo_filho_#{numero}", "feminino"%><%= t :feminino%></label>
+        <%= f.radio_button "sexo_filho_#{numero}", "nil", :style => "display: none;", :checked => true%>
+      </div>
+    </td>
+    <td height="24">
+      <div align="center"><font size="1">
+        <%= f.text_field "data_nascimento_filho_#{numero}", :size => 10, :maxlength => 10 %>
+        </font>
+      </div>
+    </td>
+    <td height="24">
+      <div align="center"> 
+        <label><%= f.radio_button "mora_com_voce_filho_#{numero}", "sim"%><%= t :sim%></label>
+        <label><%= f.radio_button "mora_com_voce_filho_#{numero}", "nao"%><%= t :nao%></label>
+        <%= f.radio_button "mora_com_voce_filho_#{numero}", "nil", :style => "display: none;", :checked => true%>
+      </div>
+    </td>
+  </tr>
+<%end%>
+
