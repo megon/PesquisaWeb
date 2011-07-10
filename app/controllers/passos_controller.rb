@@ -22,7 +22,7 @@ class PassosController < ApplicationController
 
   def show
     @participante = Participante.find_by_cpf(session[:cpf])
-    puts @participante.passo_atual
+
     if @participante.passo_atual >= params[:id].to_i
       render(:template => "passos/#{params[:id]}")
     else
