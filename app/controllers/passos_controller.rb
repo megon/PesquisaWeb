@@ -21,19 +21,12 @@ class PassosController < ApplicationController
   end
 
   def show
-    @participante = Participante.find_by_cpf(session[:cpf])
-    
-    if @participante.passo_atual >= params[:id].to_i
-      render(:template => "passos/#{params[:id]}")
-    else
-      redirect_to :action =>"show", :id => @participante.passo_atual
-    end
+    render(:template => "passos/#{params[:id]}")
   end
 
   def edit
     @participante = Participante.find_by_cpf(session[:cpf])
-
-    @passo = @participante.respostas.find_by_passo_id(params[:id_passo].to_i)
-    render(:template => "passos/#{params[:id_passo]}")
+    @passo = @participante.respostas.find_by_passo_id(params[:id_passo_anterior].to_i)
+    render(:template => "passos/#{params[:id_passo_anterior]}")
   end
 end
