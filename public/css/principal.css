@@ -1,84 +1,158 @@
-dadohtml, body, div, span, applet, object, iframe,
+/* CSS RESET v1.0 | 20080212 */
+
+html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
 del, dfn, em, font, img, ins, kbd, q, s, samp,
 small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
 dl, dt, dd, ol, ul, li,
 fieldset, form, label, legend,
 table, caption, tbody, tfoot, thead, tr, th, td {
-    margin: 0;
-    padding: 0;
-    border: 0;
-    outline: 0;
-    font-weight: inherit;
-    font-style: inherit;
-    font-size: 100%;
-    font-family: inherit;
-    vertical-align: baseline;
+	margin: 0;
+	padding: 0;
+	border: 0;
+	outline: 0;
+	font-size: 100%;
+	vertical-align: baseline;
+	background: transparent;
+}
+body {
+	line-height: 1;
 }
 ol, ul {
-    list-style: none;
-  text-align: left;
+	list-style: none;
 }
-li{
-  padding-bottom: 10px;
+blockquote, q {
+	quotes: none;
 }
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+
+/* remember to define focus styles! */
+:focus {
+	outline: 0;
+}
+
+/* remember to highlight inserts somehow! */
+ins {
+	text-decoration: none;
+}
+del {
+	text-decoration: line-through;
+}
+
+/* tables still need 'cellspacing="0"' in the markup */
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+/* END OF CSS RESET */
+
+
+/* Colors */
+.vermelho-escuro { color: #a61c28 }
+.azul-escuro { color: #195973 }
+.cinza-escuro {color: #606162}
+.magenta { color: #d9183b }
+.azul-claro { color: #2a80ff }
+
+.azul {
+    background: -moz-linear-gradient(center top , #4D90FE, #4787ED) repeat scroll 0 0 transparent;
+    border: 1px solid #3079ED;
+    color: #FFFFFF;
+}
+.azul:hover {
+	background: #428eff;
+}
+
+.green {
+    color: #e8f0de;
+    border: solid 1px #538312;
+    background: #64991e;
+    background: -webkit-gradient(linear, left top, left bottom, from(#7db72f), to(#4e7d0e));
+    background: -moz-linear-gradient(top,  #7db72f,  #4e7d0e);
+    filter:  progid:DXImageTransform.Microsoft.gradient(startColorstr='#7db72f', endColorstr='#4e7d0e');
+}
+.green:hover {
+    background: #538018;
+    background: -webkit-gradient(linear, left top, left bottom, from(#6b9d28), to(#436b0c));
+    background: -moz-linear-gradient(top,  #6b9d28,  #436b0c);
+    filter:  progid:DXImageTransform.Microsoft.gradient(startColorstr='#6b9d28', endColorstr='#436b0c');
+}
+.green:active {
+    color: #a9c08c;
+    background: -webkit-gradient(linear, left top, left bottom, from(#4e7d0e), to(#7db72f));
+    background: -moz-linear-gradient(top,  #4e7d0e,  #7db72f);
+    filter:  progid:DXImageTransform.Microsoft.gradient(startColorstr='#4e7d0e', endColorstr='#7db72f');
+}
+.clean-red{
+  color:#CB2026;
+  font-size: 10px;
+}
+
+/* End of Colors*/
+
+
 html, body {
-    font-family: verdana, helvetica, arial, sans-serif;
+    font-family: 'Helvetica Neue',Arial,Helvetica,Geneva,sans-serif;
     font-size: 13px;
     margin: 0; padding: 0;
     width: 100%; height: 100%;
-    text-align: center;    
-    background: #4e5660 url(/images/background.jpg) repeat-x ;
+    background: #fff;
+	color: #606162;
 }
-#pesquisaweb {
+html{
+	background: url('../images/barra-topo.gif') repeat-x;
+}
+
+#conteudo {
     margin:0 auto;
     width:940px;
     margin-bottom:55px;
 }
-#conteudo {
-    margin-top: 0px;
-    background-color: #f6f6f6;
-    -moz-border-radius: 20px;
-    border-radius: 20px;
-    box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.9);
-  overflow: hidden;    
-  padding-bottom: 20px;
-}
 #cabecalho {
-    margin-top: 0px;
-    height: 70px;
-    background-color: #f6f6f6;
-    border-top-radius: 20px;
-    -moz-border-radius: 20px 20px 0px 0px;
+    margin-top: 35px;
     padding-bottom: 30px;    
-    border-bottom: 5px solid black;
 }
-h1 {
-    background-attachment: scroll;
-    background-clip: border-box;
-    background-color: transparent;
-    background-image: url("http://www.pesquisaonline.com/imagens/back.gif");
-    background-origin: padding-box;
-    background-position: 0 0;
-    background-repeat: repeat;
-    background-size: auto auto;
-    color: #253E6D;
-    font-family: 'Helvetica Neue',Arial,Helvetica,Geneva,sans-serif;
-    font-size: 46px;
-    font-weight: bold;
-    line-height: 120px;
-    text-align: center;
-    text-shadow: 2px 2px #253E6D;
+#propaganda{
+	width:430px;
+	float:left;
 }
-h2.texto_instrucoes {
-    margin: 10px 0 0 20px;
-    color: #830E14;
-    font-size: 16px;
-    font-weight:bold;
-    font-family: 'Helvetica Neue',Arial,Helvetica,Geneva,sans-serif;
-    text-align: center;
+#participante {
+    float: right;
+    width: 47%;
+    margin-top: 0px;
+    height: 500px;
 }
+#dados{
+  background-color: #E5E5E5;
+  padding-top: 10px;
+  padding-bottom: 10px;        
+  margin: 20px 10px 20px 20px;
+  width: 100%;
+  border-top-radius: 20px;
+  -moz-border-radius: 20px 20px 20px 20px;
+  overflow: hidden;
+}
+div#participante div#dados form #actions-bar{
+	padding-left: 40px;
+}
+
+h1.titulo {
+	color: #195973;
+	font-size: 36px;
+}
+
+/* Campos Formulario */
+ol, ul {
+    list-style: none outside none;
+    text-align: left;
+}
+li{ padding-bottom: 10px;}
 .texto_validacao {
     margin: 10px 0 0 20px;
     color: #830E14;
@@ -86,39 +160,12 @@ h2.texto_instrucoes {
     font-family: 'Helvetica Neue',Arial,Helvetica,Geneva,sans-serif;
     text-align: center;
 }
-#participante {
-    float: left;
-    width: 47%;
-    margin-top: 0px;
-    height: 500px;
-}
-#instrucoes{
-    padding-top: 5px;    
-    margin: 20px 10px;
-}
-#dados{
-  background-color: #E5E5E5;
-    padding-top: 10px;
-  padding-bottom: 10px;        
-    margin: 20px 10px 20px 20px;
-    width: 100%;
-    border-top-radius: 20px;
-    -moz-border-radius: 20px 20px 20px 20px;
-  overflow: hidden;
-}
-#propaganda {
-  float: left;
-    padding-top: 20px;    
-    margin: 50px 10px 20px 20px;
-    width: 49%;
-}
 fieldset {
   padding-left: 40px;
   padding-top: 15px;
   
 }
 label {
-  color: #4F4F4F;
   text-align: left;
   display: block;
   text-shadow: 1px 1px 0 #F9F9F9;
@@ -158,28 +205,5 @@ label {
     position: relative;
     top: 1px;
 }
-.green {
-    color: #e8f0de;
-    border: solid 1px #538312;
-    background: #64991e;
-    background: -webkit-gradient(linear, left top, left bottom, from(#7db72f), to(#4e7d0e));
-    background: -moz-linear-gradient(top,  #7db72f,  #4e7d0e);
-    filter:  progid:DXImageTransform.Microsoft.gradient(startColorstr='#7db72f', endColorstr='#4e7d0e');
-}
-.green:hover {
-    background: #538018;
-    background: -webkit-gradient(linear, left top, left bottom, from(#6b9d28), to(#436b0c));
-    background: -moz-linear-gradient(top,  #6b9d28,  #436b0c);
-    filter:  progid:DXImageTransform.Microsoft.gradient(startColorstr='#6b9d28', endColorstr='#436b0c');
-}
-.green:active {
-    color: #a9c08c;
-    background: -webkit-gradient(linear, left top, left bottom, from(#4e7d0e), to(#7db72f));
-    background: -moz-linear-gradient(top,  #4e7d0e,  #7db72f);
-    filter:  progid:DXImageTransform.Microsoft.gradient(startColorstr='#4e7d0e', endColorstr='#7db72f');
-}
-.clean-red{
-  color:#CB2026;
-  font-size: 10px;
-}
 
+/* End Campos Formulario */

@@ -1,64 +1,62 @@
-		<div id="pesquisaweb">
 			<div id="conteudo">
 				<div id="cabecalho">
-					<h1 class="slogan">Pesquisaweb, sua pesquisa na Internet.</h1>
+					<h1 class="titulo">PESQUISA MEGON <span class="vermelho-escuro">2011<span></h1>
+					<p>	Estamos realizando esta pesquisa com a finalidade de conhecê-lo melhor
+					    e assim levar à você e sua família os melhores serviços e ofertas.</p>
+					<p>Responda e concorra gratuitamente a <span class="magenta">1 iPad</span></p>
+				</div>
+				<div id="propaganda">
+					<img src="../images/ipad.png"/>
 				</div>
 				<div id="participante">
-					<div id="instrucoes">
-						<h2 class="texto_instrucoes">Participe de nossa pesquisa e concorra a prêmios</h2>
-						<p class="texto_validacao">(Como trata-se de uma pesquisa de exemplo, algumas validações estão desativadas.)</p>
-					</div>
-				
 					<div id="dados">
-            <%= form_for :participante, :url => { :action  => 'create' } do |f| %>
-                <fieldset id="cadastro_participante">
-                  <ol>
-                    <li>
-                      <%= f.label(:nome)%>
-                      <%= f.text_field :nome, :size => 35, :class=>"input_text", :maxlength => 100 %>
-                      <div class="clean-red">
-                        <%= f.error_message_on :nome%>
-                      </div>
-                    </li>
-                    <li>
-                      <%= f.label(:email)%>
-                      <%= f.text_field :email, :size => 35, :class=>"input_text", :maxlength => 100 %>
-                      <div class="clean-red">
-                        <%= f.error_message_on :email%>
-                      </div>
-                    </li>
-                    <li>
-                      <%= f.label(:email_confirmation)%>
-                      <%= f.text_field :email_confirmation, :size => 35, :class=>"input_text", :maxlength => 100 %>
-                      <div class="clean-red">
-                        <%= f.error_message_on :email_confirmation%>
-                      </div>
-                    </li>
-                    <li>
-                      <%= f.label(:cpf)%>
-                      <%= f.text_field :cpf, :size => 20, :class=>"input_text number", :maxlength => 11 %>
-                      <div class="clean-red">
-                        <%= f.error_message_on :cpf%>
-                      </div>
-                    </li>
-                    <li>
-                      <%= f.label(:data_nascimento)%>
-                      <%= f.text_field :data_nascimento, :size => 20, :class=>"input_text", :maxlength => 10%>
-                      <div class="clean-red">
-                        <%= f.error_message_on :data_nascimento%>
-                      </div>
-                    </li>
-                   </ol>
-                </fieldset>
-                <%= f.submit "Participar", :class =>"button green" %>
-            <%end%>
+			            <%= form_for :participante, :url => { :action  => 'create' } do |f| %>
+			                <fieldset id="cadastro_participante">
+			                  <ol>
+			                    <li>
+			                      <%= f.label(:nome)%>
+			                      <%= f.text_field :nome, :size => 35, :class=>"input_text", :maxlength => 100 %>
+			                      <div class="clean-red">
+			                        <%= f.error_message_on :nome%>
+			                      </div>
+			                    </li>
+			                    <li>
+			                      <%= f.label(:email)%>
+			                      <%= f.text_field :email, :size => 35, :class=>"input_text", :maxlength => 100 %>
+			                      <div class="clean-red">
+			                        <%= f.error_message_on :email%>
+			                      </div>
+			                    </li>
+			                    <li>
+			                      <%= f.label(:email_confirmation)%>
+			                      <%= f.text_field :email_confirmation, :size => 35, :class=>"input_text", :maxlength => 100 %>
+			                      <div class="clean-red">
+			                        <%= f.error_message_on :email_confirmation%>
+			                      </div>
+			                    </li>
+			                    <li>
+			                      <%= f.label(:cpf)%>
+			                      <%= f.text_field :cpf, :size => 20, :class=>"input_text number", :maxlength => 11 %>
+			                      <div class="clean-red">
+			                        <%= f.error_message_on :cpf%>
+			                      </div>
+			                    </li>
+			                    <li>
+			                      <%= f.label(:data_nascimento)%>
+			                      <%= f.text_field :data_nascimento, :size => 20, :class=>"input_text", :maxlength => 10%>
+			                      <div class="clean-red">
+			                        <%= f.error_message_on :data_nascimento%>
+			                      </div>
+			                    </li>
+			                   </ol>
+			                </fieldset>
+							<div id="actions-bar">
+			                	<%= f.submit "Participar", :class =>"button azul" %>
+							</div>
+			            <%end%>
 					</div>
 				</div>
-        <div id="propaganda">
-          <img width="365px" height="462px" src="http://www.itouchbr.com.br/wp-content/uploads/2010/09/ipad.jpg">
-        </div>				
 			</div>
-		</div>
     <script type="text/javascript">
       if (typeof jQuery == 'undefined')
       {
