@@ -62,7 +62,7 @@
 
 		              <li class="form-row form-text">
 		                <%= f.label(:telefone_residencial, :class => "question")%>
-		                <%= f.text_field :telefone_residencial, :size => 11, :maxlength => 13, :class => "required telefone"%>
+		                <%= f.text_field :telefone_residencial, :size => 13, :maxlength => 13, :class => "required telefone"%>
 
 		              </li>
 		             </ol>
@@ -102,11 +102,11 @@
 		                      ["8"],  
 		                      ["9"],  
 		                      ["10"]
-		                ], quantos_filhos_selecionado), {:prompt => "Selecione uma opção"}, {:onchange => "adicionar_filhos(this.form);"} %>
+		                ], quantos_filhos_selecionado), {:prompt => "Selecione uma opção"}, {:onchange => "exibir_filhos();"} %>
 		              </li>
 
 		              <li class="form-row form-text">
-                    <table id="tabela_filhos" width="70%">
+                    <table id="tabela_filhos" width="70%" style="display: none">
                       <tr>
                         <th width="61">&nbsp;</th>
                         <th width="200"> <div align="center"></div>
@@ -154,21 +154,17 @@
 		      <%end%>
 
 <script type="text/javascript">
-  function adicionar_filhos(f){
-    alert($("#passo_quantos_filhos").val());
-    var qtde_filhos = $("#passo_quantos_filhos").val();
-    var dados_filho_html = "<tr>";
-    dados_filho_html += '<td>';
-    dados_filho_html += '<input type="radio" name="sexo_filho_" id="sexo_filho_" value="masculino" >Masculino';
-    dados_filho_html += '</td>';
-    dados_filho_html += "</tr>";
-    alert(dados_filho_html);
-
-    $("#tabela_filhos").html('');
-    for (i=1; i<= qtde_filhos;i++){
-      $("#tabela_filhos").append(dados_filho_html);
-      $("#sexo_filho_").attr("name", "sexo_filho_"+i);
-      $("#sexo_filho_").attr("id", "sexo_filho_"+i);
+function exibir_filhos(){
+  $(document).ready(function() {
+    for (i = 0; i <= 10; i++){
+      $('#filho_' + i).hide();
     }
-  }
+    if ($('#passo_quantos_filhos').val()>0){
+      $('#tabela_filhos').show();
+      for (i = 0; i <= $('#passo_quantos_filhos').val(); i++){
+        $('#filho_' + i).show();
+      }
+    }
+  });  
+}
 </script>
