@@ -86,11 +86,11 @@
 		                <label><%= f.radio_button :tem_filhos, "nao"%><%= t :nao%></label>
                     <%= f.radio_button :tem_filhos, "nil", :style => "display: none;", :checked => @passo.nil? or @passo.tem_filhos.nil?%>
 		              </li>
-
-		              <li class="form-row form-text">
-                    <%quantos_filhos_selecionado= @passo.quantos_filhos unless @passo.nil? %>
-		                <%= f.label(:quantos_filhos, :class => "question")%>
-		                <%= f.select :quantos_filhos, 
+                  <div id="quantos_filhos" style="display: none">
+		                <li class="form-row form-text">
+                      <%quantos_filhos_selecionado= @passo.quantos_filhos unless @passo.nil? %>
+		                  <%= f.label(:quantos_filhos, :class => "question")%>
+		                  <%= f.select :quantos_filhos, 
 		                     options_for_select([
 		                      ["1"],  
 		                      ["2"],  
@@ -102,8 +102,9 @@
 		                      ["8"],  
 		                      ["9"],  
 		                      ["10"]
-		                ], quantos_filhos_selecionado), {:prompt => "Selecione uma opção"} %>
-		              </li>
+		                      ], quantos_filhos_selecionado), {:prompt => "Selecione uma opção"} %>
+		                </li>
+		              </div>
                   <div id="div_filhos" style="display: none">
 		                <li class="form-row form-text">
                       <table id="tabela_filhos" width="70%">
@@ -157,7 +158,20 @@
 <script type="text/javascript">
 $(document).ready(function(){
   $("#passo_quantos_filhos").change(exibir_filhos);
-//  $("passo_tem_filhos").change(function(){alert('oii')});
+  $("#passo_tem_filhos_sim").change(
+  	function(){
+  		if ($("#passo_tem_filhos_sim:checked").val()){
+        $('#quantos_filhos').fadeIn("slow");
+      }
+	});
+  $("#passo_tem_filhos_nao").change(
+  	function(){
+  		if ($("#passo_tem_filhos_nao:checked").val()){
+        $('#quantos_filhos').fadeOut();
+        $('#div_filhos').fadeOut();
+        $('#passo_quantos_filhos').val(0);
+      }
+	});
   exibir_filhos();
 });
 
@@ -173,7 +187,4 @@ function exibir_filhos(){
   }
 }
 
-function exibir(componente){
-  $(componente).fadeIn("slow");
-}
 </script>
