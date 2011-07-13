@@ -102,21 +102,22 @@
 		                      ["8"],  
 		                      ["9"],  
 		                      ["10"]
-		                ], quantos_filhos_selecionado), {:prompt => "Selecione uma opção"}, {:onchange => "exibir_filhos();"} %>
+		                ], quantos_filhos_selecionado), {:prompt => "Selecione uma opção"} %>
 		              </li>
-
-		              <li class="form-row form-text">
-                    <table id="tabela_filhos" width="70%" style="display: none">
-                      <tr>
-                        <th width="61">&nbsp;</th>
-                        <th width="200"> <div align="center"></div>
-                        <div align="center" ><%= f.label(:sexo_filho)%></div></th>
-                        <th width="198"><div align="center"><%= f.label(:data_nascimento_filho)%></div></th>
-                        <th width="119"><div align="center"><%= f.label(:mora_com_voce)%></div></th>
-                      </tr>
-                      <%= render(:partial => 'filhos', :locals => {:f => f, :total => 10})%>
-                    </table>
-		              </li>
+                  <div id="div_filhos" style="display: none">
+		                <li class="form-row form-text">
+                      <table id="tabela_filhos" width="70%">
+                        <tr>
+                          <th width="61">&nbsp;</th>
+                          <th width="200"> <div align="center"></div>
+                          <div align="center" ><%= f.label(:sexo_filho)%></div></th>
+                          <th width="198"><div align="center"><%= f.label(:data_nascimento_filho)%></div></th>
+                          <th width="119"><div align="center"><%= f.label(:mora_com_voce)%></div></th>
+                        </tr>
+                          <%= render(:partial => 'filhos', :locals => {:f => f, :total => 10})%>
+                      </table>
+		                </li>
+		              </div>
 
 		            </ol>
 		          </fieldset>
@@ -154,17 +155,25 @@
 		      <%end%>
 
 <script type="text/javascript">
+$(document).ready(function(){
+  $("#passo_quantos_filhos").change(exibir_filhos);
+//  $("passo_tem_filhos").change(function(){alert('oii')});
+  exibir_filhos();
+});
+
 function exibir_filhos(){
-  $(document).ready(function() {
-    for (i = 0; i <= 10; i++){
-      $('#filho_' + i).hide();
+  for (i = 0; i <= 10; i++){
+    $('#filho_' + i).hide();
+  }
+  if ($('#passo_quantos_filhos').val()>0){
+    $('#div_filhos').show();
+    for (i = 0; i <= $('#passo_quantos_filhos').val(); i++){
+      $('#filho_' + i).fadeIn("slow");
     }
-    if ($('#passo_quantos_filhos').val()>0){
-      $('#tabela_filhos').show();
-      for (i = 0; i <= $('#passo_quantos_filhos').val(); i++){
-        $('#filho_' + i).show();
-      }
-    }
-  });  
+  }
+}
+
+function exibir(componente){
+  $(componente).fadeIn("slow");
 }
 </script>
