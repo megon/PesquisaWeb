@@ -10,7 +10,7 @@ class IndicacoesController < ApplicationController
     if @indicacao.valid?
       @participante.add_indicacao @indicacao
       flash[:notice] = "Seus amigos foram convidados a participar de nossa pesquisa."
-      redirect_to indicacoes_path
+      redirect_to :action => "index"
     else
       flash[:error] = @indicacao.errors.full_messages
       render :index
