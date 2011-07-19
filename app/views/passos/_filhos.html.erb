@@ -6,6 +6,7 @@
         <label><%= f.radio_button "sexo_filho_#{numero}", "masculino"%><%= t :masculino%></label>
         <label><%= f.radio_button "sexo_filho_#{numero}", "feminino"%><%= t :feminino%></label>
         <%= f.radio_button "sexo_filho_#{numero}", "nil", :style => "display: none;", :checked => @passo.nil?%>
+        <label class="error" for="passo_sexo_filho_1_masculino"></label>
       </div>
     </td>
     <td height="24">

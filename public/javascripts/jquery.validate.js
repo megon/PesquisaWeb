@@ -253,6 +253,7 @@ $.extend($.validator, {
 
 	messages: {
 		required: "Campo obrigatório.",
+    requiredRadio: "Campo obrigatório.",
 		remote: "Corrija esse campo.",
 		email: "Digite um email válido.",
 		url: "Digite uma URL válida.",
@@ -742,6 +743,7 @@ $.extend($.validator, {
 
 	classRuleSettings: {
 		required: {required: true},
+    requiredRadio: {requiredRadio: true},
 		email: {email: true},
 		url: {url: true},
 		date: {date: true},
@@ -913,6 +915,10 @@ $.extend($.validator, {
 			default:
 				return $.trim(value).length > 0;
 			}
+		},
+
+		requiredRadio: function(value, element, param) {
+  		return $("input[name='"+element.name+"']:checked").val() != 'nil'
 		},
 
 		// http://docs.jquery.com/Plugins/Validation/Methods/remote
