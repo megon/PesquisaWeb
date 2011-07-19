@@ -918,7 +918,10 @@ $.extend($.validator, {
 		},
 
 		requiredRadio: function(value, element, param) {
-  		return $("input[name='"+element.name+"']:checked").val() != 'nil'
+      if ($("input[name='"+element.name+"']:checked").val()){
+        return $("input[name='"+element.name+"']:checked").val() != 'nil';
+      }
+      return false;
 		},
 
 		// http://docs.jquery.com/Plugins/Validation/Methods/remote
