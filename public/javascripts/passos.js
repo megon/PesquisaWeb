@@ -1,11 +1,20 @@
 $(document).ready(function(){
   $("#passo_form").validate();
-  $("#passo_telefone_residencial").mask("(99)9999-9999",{placeholder:" "});
 
+  //primeiro passo
   criarFilhos();
+  $("#passo_telefone_residencial").mask("(99)9999-9999",{placeholder:" "});
   $("#passo_quantos_filhos").change(criarFilhos);
   $("#passo_tem_filhos_sim").change(criarFilhos);
   $("#passo_tem_filhos_nao").change(ocultarFilhos);
+  
+  //segundo passo
+  exibirOperadora();
+  exibirCartaoCredito();
+  $("#passo_possui_tv_por_assinatura_sim").change(exibirOperadora);
+  $("#passo_possui_tv_por_assinatura_nao").change(exibirOperadora);
+  $("#passo_cartao_credito_sim").change(exibirCartaoCredito);
+  $("#passo_cartao_credito_nao").change(exibirCartaoCredito);
 });
 
 function criarFilhos(){
@@ -67,3 +76,25 @@ function ocultarFilhos(){
   removerValidacaoFilhos(0);
   removerConteudoFilhos(0);
 }
+
+function exibirOperadora(){
+	if ($("#passo_possui_tv_por_assinatura_sim:checked").val()){
+		$('#operadora_tv_assinatura').fadeIn("slow");
+	}
+
+	if ($("#passo_possui_tv_por_assinatura_nao:checked").val()){
+		$('#operadora_tv_assinatura').fadeOut();
+	}
+}
+
+function exibirCartaoCredito(){
+	if ($("#passo_cartao_credito_sim:checked").val()){
+		$('#cartao_credito').fadeIn("slow");
+	}
+
+	if ($("#passo_cartao_credito_nao:checked").val()){
+		$('#cartao_credito').fadeOut();
+	}
+}
+
+

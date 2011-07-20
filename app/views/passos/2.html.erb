@@ -55,21 +55,24 @@
               </li>
 
               <li class="form-row form-text">
-                <%= f.label(:possui_tv_assinatura, :class => "question")%>
+                <%= f.label(:possui_tv_assinatura, :class => "question-long")%>
                 <label><%= f.radio_button :possui_tv_por_assinatura, "sim"%><%= t :sim%></label>
                 <label><%= f.radio_button :possui_tv_por_assinatura, "nao"%><%= t :nao%></label>
                 <%= f.radio_button :possui_tv_por_assinatura, "nil", :hidden => "true", :checked => @passo.nil? or  @passo.possui_tv_por_assinatura.nil?%>
-                <%= f.label(:operadora_tv_assinatura)%>
-
-                <%operadora_tv_assinatura_selecionado= @passo.operadora_tv_assinatura unless @passo.nil? %>
-                <%= f.select :operadora_tv_assinatura, 
-                     options_for_select([
-                      ["NET"],  
-                      ["SKY"],  
-                      ["TVA"],  
-                      ["Outra"]
-                ], operadora_tv_assinatura_selecionado), {:prompt => "Selecione uma opção"} %>
               </li>
+              <div id="operadora_tv_assinatura" style="display: none">
+                <li class="form-row form-text">
+                  <%= f.label(:operadora_tv_assinatura, :class => "question")%>
+                  <%operadora_tv_assinatura_selecionado= @passo.operadora_tv_assinatura unless @passo.nil? %>
+                  <%= f.select :operadora_tv_assinatura, 
+                       options_for_select([
+                        ["NET"],  
+                        ["SKY"],  
+                        ["TVA"],  
+                        ["Outra"]
+                  ], operadora_tv_assinatura_selecionado), {:prompt => "Selecione uma opção"} %>
+                </li>
+              </div>
 
              </ol>
           </fieldset>
@@ -113,24 +116,24 @@
 				   </div>
 			  </li>
               <li class="form-row form-text">
-                <%= f.label(:cartao_credito, :class => "question-long left")%><br>
-                <div style="width: 120px;">
-                	<label><%= f.radio_button :cartao_credito, "sim", :class => "required"%><%= t :sim%></label>
-                	<label><%= f.radio_button :cartao_credito, "nao"%><%= t :nao%></label>
-                	<%= f.radio_button :cartao_credito, "nil", :hidden => "true", :checked => @passo.nil? or @passo.cartao_credito.nil?%>
-
-				</div>
-                <%= f.label(:quais_cartoes_credito)%><br>
-                <%= f.label(:visa)%><br>
-                <%= f.check_box :visa, :class => "checkbox", :validate => "required:true, minlength:2"%>
-                <%= f.label(:mastercard)%><br>
-                <%= f.check_box :mastercard%>
-                <%= f.label(:american_express)%><br>
-                <%= f.check_box :american_express%>
-                <%= f.label(:outros)%>
-                <%= f.check_box :outros%>
-
+                <%= f.label(:cartao_credito, :class => "question-long")%>
+              	<label><%= f.radio_button :cartao_credito, "sim", :class => "requiredRadio"%><%= t :sim%></label>
+              	<label><%= f.radio_button :cartao_credito, "nao"%><%= t :nao%></label>
+              	<%= f.radio_button :cartao_credito, "nil", :hidden => "true", :checked => @passo.nil? or @passo.cartao_credito.nil?%>
               </li>
+              <div id="cartao_credito" style="display: none">
+                <li class="form-row form-text">
+                  <%= f.label(:quais_cartoes_credito, :class => "question")%>
+                  <%= f.check_box :visa, :class => "checkbox", :validate => "required:true"%>
+                  <%= f.label(:visa)%>
+                  <%= f.check_box :mastercard%>
+                  <%= f.label(:mastercard)%>
+                  <%= f.check_box :american_express%>
+                  <%= f.label(:american_express)%>
+                  <%= f.check_box :outros%>
+                  <%= f.label(:outros)%>
+                </li>
+              </div>    
 
             </ol>
           </fieldset>

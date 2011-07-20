@@ -1,6 +1,6 @@
 <%1.upto(total) do |numero|%>
   <tr id='<%= "filho_#{numero}"%>' style="display: none">
-    <td height="40">Filho <%= f.label(numero)%></td>
+    <td height="40">* Filho <%= f.label(numero)%></td>
     <td height="24">
       <div align="center">
         <label><%= f.radio_button "sexo_filho_#{numero}", "masculino"%><%= t :masculino%></label>
