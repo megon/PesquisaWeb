@@ -5,23 +5,23 @@
 		            <ol>
 		              <li class="form-row form-text">
 		                <%= f.label(:endereco, :class => "question")%>
-		                <%= f.text_field :endereco, :size => 50, :maxlength => 100, :class => "required" %>
+		                <%= f.text_field :endereco, :size => 50, :maxlength => 100, :class => "validate[required] text-input" %>
 		              </li>
 
 
 		              <li class="form-row form-text">
 		                <%= f.label(:numero, :class => "question")%>
-		                <%= f.text_field :numero, :size => 10, :maxlength => 10, :class => "required" %>
+		                <%= f.text_field :numero, :size => 10, :maxlength => 10, :class => "validate[required] text-input" %>
 		              </li>
 
 		              <li class="form-row form-text">
 		                <%= f.label(:bairro, :class => "question")%>
-		                <%= f.text_field :bairro, :size => 50, :maxlength => 100, :class => "required" %>
+		                <%= f.text_field :bairro, :size => 50, :maxlength => 100, :class => "validate[required] text-input" %>
 		              </li>
 
 		              <li class="form-row form-text">
 		                <%= f.label(:cidade, :class => "question")%>
-		                <%= f.text_field :cidade, :size => 50, :maxlength => 100, :class => "required" %>
+		                <%= f.text_field :cidade, :size => 50, :maxlength => 100, :class => "validate[required] text-input" %>
 		              </li>
 
 		              <li class="form-row form-text">
@@ -57,12 +57,12 @@
 		                      ["SE"],  
 		                      ["SP"],  
 		                      ["TO"]
-		                ], estado_selecionado), {:prompt => "Selecione um estado"}, {:class => "required"}%>
+		                ], estado_selecionado), {:prompt => "Selecione um estado"}, {:class => "validate[required] text-input"}%>
 		              </li>
 
 		              <li class="form-row form-text">
 		                <%= f.label(:telefone_residencial, :class => "question")%>
-		                <%= f.text_field :telefone_residencial, :size => 13, :maxlength => 13, :class => "required telefone"%>
+		                <%= f.text_field :telefone_residencial, :size => 13, :maxlength => 13, :class => "validate[required] text-input telefone"%>
 
 		              </li>
 		             </ol>
@@ -73,17 +73,17 @@
 		            <ol>
 		              <li class="form-row form-text">
 		                <%= f.label(:atualmente_esta, :class => "question")%>
-		                <label><%= f.radio_button :atualmente_esta, "solteiro"%><%= t :solteiro%></label>
-		                <label><%= f.radio_button :atualmente_esta, "casado"%><%= t :casado%></label>
-		                <label><%= f.radio_button :atualmente_esta, "separado"%><%= t :separado%></label>
-		                <label><%= f.radio_button :atualmente_esta, "viuvo"%><%= t :viuvo%></label>
+		                <label><%= f.radio_button :atualmente_esta, "solteiro", :class => "validate[required] radio"%><%= t :solteiro%></label>
+		                <label><%= f.radio_button :atualmente_esta, "casado", :class => "validate[required] radio"%><%= t :casado%></label>
+		                <label><%= f.radio_button :atualmente_esta, "separado", :class => "validate[required] radio"%><%= t :separado%></label>
+		                <label><%= f.radio_button :atualmente_esta, "viuvo", :class => "validate[required] radio"%><%= t :viuvo%></label>
                     <%= f.radio_button :atualmente_esta, "nil", :style => "display: none;", :checked => @passo.nil? or @passo.atualmente_esta.nil?%>
 		              </li>
 
 		              <li class="form-row form-text">
 		                <%= f.label(:tem_filhos, :class => "question")%>
-		                <label><%= f.radio_button :tem_filhos, "sim"%><%= t :sim%></label>
-		                <label><%= f.radio_button :tem_filhos, "nao"%><%= t :nao%></label>
+		                <label><%= f.radio_button :tem_filhos, "sim", :class => "validate[required] radio"%><%= t :sim%></label>
+		                <label><%= f.radio_button :tem_filhos, "nao", :class => "validate[required] radio"%><%= t :nao%></label>
                     <%= f.radio_button :tem_filhos, "nil", :style => "display: none;", :checked => @passo.nil? or @passo.tem_filhos.nil?%>
 		              </li>
                   <div id="quantos_filhos" style="display: none">
@@ -143,8 +143,8 @@
 		              </li>
 		              <li class="form-row form-text">
 		                <%= f.label(:estuda_momento, :class => "question-long")%>
-		                <label><%= f.radio_button :estuda_momento, "sim"%><%= t :sim%></label>
-		                <label><%= f.radio_button :estuda_momento, "nao"%><%= t :nao%></label>
+		                <label><%= f.radio_button :estuda_momento, "sim", :class => "validate[required] radio"%><%= t :sim%></label>
+		                <label><%= f.radio_button :estuda_momento, "nao", :class => "validate[required] radio"%><%= t :nao%></label>
                     <%= f.radio_button :estuda_momento, "nil", :style => "display: none;", :checked => @passo.nil? or @passo.estuda_momento.nil? %>
 		              </li>
 

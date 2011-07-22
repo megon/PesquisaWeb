@@ -3,21 +3,21 @@
     <td height="40">* Filho <%= f.label(numero)%></td>
     <td height="24">
       <div align="center">
-        <label><%= f.radio_button "sexo_filho_#{numero}", "masculino"%><%= t :masculino%></label>
-        <label><%= f.radio_button "sexo_filho_#{numero}", "feminino"%><%= t :feminino%></label>
+        <label><%= f.radio_button "sexo_filho_#{numero}", "masculino", :class => "validate[required] radio"%><%= t :masculino%></label>
+        <label><%= f.radio_button "sexo_filho_#{numero}", "feminino", :class => "validate[required] radio"%><%= t :feminino%></label>
         <%= f.radio_button "sexo_filho_#{numero}", "nil", :style => "display: none;", :checked => @passo.nil?%>
       </div>
     </td>
     <td height="24">
       <div align="center"><font size="1">
-        <%= f.text_field "data_nascimento_filho_#{numero}", :size => 10, :maxlength => 10 %>
+        <%= f.text_field "data_nascimento_filho_#{numero}", :size => 10, :maxlength => 10, :class => "validate[required,custom[date]] input-text" %>
         </font>
       </div>
     </td>
     <td height="24">
       <div align="center"> 
-        <label><%= f.radio_button "mora_com_voce_filho_#{numero}", "sim"%><%= t :sim%></label>
-        <label><%= f.radio_button "mora_com_voce_filho_#{numero}", "nao"%><%= t :nao%></label>
+        <label><%= f.radio_button "mora_com_voce_filho_#{numero}", "sim", :class => "validate[required] radio"%><%= t :sim%></label>
+        <label><%= f.radio_button "mora_com_voce_filho_#{numero}", "nao", :class => "validate[required] radio"%><%= t :nao%></label>
         <%= f.radio_button "mora_com_voce_filho_#{numero}", "nil", :style => "display: none;", :checked => @passo.nil?%>
       </div>
     </td>

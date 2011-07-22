@@ -1,5 +1,6 @@
 $(document).ready(function(){
-  $("#passo_form").validate();
+  //$("#passo_form").validate();
+  $("#passo_form").validationEngine();
 
   //primeiro passo
   criarFilhos();
@@ -18,6 +19,7 @@ $(document).ready(function(){
 });
 
 function criarFilhos(){
+  $("#passo_form").validationEngine('hide');
 	if ($("#passo_tem_filhos_sim:checked").val()){
 		$('#quantos_filhos').fadeIn("slow");
 	}
@@ -43,18 +45,20 @@ function adicionarValidacaoFilhos(){
   if ($('#passo_quantos_filhos').val()>0){
     for (i = 0; i <= $('#passo_quantos_filhos').val(); i++){
       $('#passo_data_nascimento_filho_' + i).mask('99/99/9999',{placeholder:' '});
-      $('#passo_data_nascimento_filho_' + i).addClass('dateBR');
-      $('#passo_sexo_filho_' + i + '_masculino').addClass('requiredRadio');
-      $('#passo_mora_com_voce_filho_' + i + '_sim').addClass('requiredRadio');
+      $('#passo_data_nascimento_filho_' + i).addClass('validate[required,custom[date]] input-text');
+      $('#passo_sexo_filho_' + i + '_masculino').addClass('validate[required] radio');
+      $('#passo_sexo_filho_' + i + '_feminino').addClass('validate[required] radio');
+      $('#passo_mora_com_voce_filho_' + i + '_sim').addClass('validate[required] radio');
     }
   }
 }
 
 function removerValidacaoFilhos(valorInicial){
   for (i = valorInicial; i <= 10; i++){  
-    $('#passo_data_nascimento_filho_' + i).removeClass('dateBR');
-    $('#passo_sexo_filho_' + i + '_masculino').removeClass('requiredRadio');      
-    $('#passo_mora_com_voce_filho_' + i + '_sim').removeClass('requiredRadio');
+    $('#passo_data_nascimento_filho_' + i).removeClass('validate[required,custom[date]] input-text');
+    $('#passo_sexo_filho_' + i + '_masculino').removeClass('validate[required] radio');      
+    $('#passo_sexo_filho_' + i + '_feminino').removeClass('validate[required] radio');      
+    $('#passo_mora_com_voce_filho_' + i + '_sim').removeClass('validate[required] radio');
   }
 }
 
@@ -68,6 +72,7 @@ function removerConteudoFilhos(valorInicial){
 }
 
 function ocultarFilhos(){
+  $("#passo_form").validationEngine('hide');
 	if ($("#passo_tem_filhos_nao:checked").val()){
 	  $('#quantos_filhos').fadeOut();
 	  $('#div_filhos').fadeOut();
