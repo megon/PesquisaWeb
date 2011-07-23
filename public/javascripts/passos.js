@@ -83,12 +83,15 @@ function ocultarFilhos(){
 }
 
 function exibirOperadora(){
+  $("#passo_form").validationEngine('hide');
 	if ($("#passo_possui_tv_por_assinatura_sim:checked").val()){
 		$('#operadora_tv_assinatura').fadeIn("slow");
+                $('#passo_operadora_tv_assinatura').addClass('validate[required]');
 	}
 
 	if ($("#passo_possui_tv_por_assinatura_nao:checked").val()){
 		$('#operadora_tv_assinatura').fadeOut();
+                $('#passo_operadora_tv_assinatura').removeClass('validate[required]');
 	}
 }
 
