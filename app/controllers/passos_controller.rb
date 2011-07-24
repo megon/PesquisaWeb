@@ -23,7 +23,7 @@ class PassosController < ApplicationController
   def show
     @participante = Participante.find_by_cpf(session[:cpf])
 
-    if @participante.passo_atual >= params[:id].to_i
+    if params[:id].to_i.eql?(@participante.passo_atual)
       render(:template => "passos/#{params[:id]}")
     else
       redirect_to :action =>"show", :id => @participante.passo_atual

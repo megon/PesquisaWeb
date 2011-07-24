@@ -21,20 +21,21 @@ describe PassosController do
       response.should redirect_to :action =>"show", :id => @resposta.passo_id.to_int + 1
     end
 
-    it "deve poder voltar para o passo anterior" do
-      @participante = mock_model(Participante).as_null_object
-      Participante.should_receive(:find_by_cpf).with(session[:cpf]).and_return(@participante)
-      @participante.respostas.should_receive(:find_by_passo_id).with("1".to_i).and_return(@resposta)
-      get :edit, :id_passo => 1
-      response.should render_template "passos/1"
-    end
-
     it "deve barrar tentativa de pular passos da pesquisa" do
       @participante = mock_model(Participante, :passo_atual => 1)
       
       Participante.should_receive(:find_by_cpf).with(session[:cpf]).and_return(@participante)
       
       get :show, :id => 3
+      response.should redirect_to :action =>"show", :id => @participante.passo_atual
+    end
+    
+    it "deve barrar tentativa de voltar passos da pesquisa" do
+      @participante = mock_model(Participante, :passo_atual => 3)
+      
+      Participante.should_receive(:find_by_cpf).with(session[:cpf]).and_return(@participante)
+      
+      get :show, :id => 2
       response.should redirect_to :action =>"show", :id => @participante.passo_atual
     end
   end  
