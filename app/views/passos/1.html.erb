@@ -77,14 +77,12 @@
 		                <label><%= f.radio_button :atualmente_esta, "casado", :class => "validate[required] radio"%><%= t :casado%></label>
 		                <label><%= f.radio_button :atualmente_esta, "separado", :class => "validate[required] radio"%><%= t :separado%></label>
 		                <label><%= f.radio_button :atualmente_esta, "viuvo", :class => "validate[required] radio"%><%= t :viuvo%></label>
-                    <%= f.radio_button :atualmente_esta, "nil", :style => "display: none;", :checked => @passo.nil? or @passo.atualmente_esta.nil?%>
 		              </li>
 
 		              <li class="form-row form-text">
 		                <%= f.label(:tem_filhos, :class => "question")%>
 		                <label><%= f.radio_button :tem_filhos, "sim", :class => "validate[required] radio"%><%= t :sim%></label>
 		                <label><%= f.radio_button :tem_filhos, "nao", :class => "validate[required] radio"%><%= t :nao%></label>
-                    <%= f.radio_button :tem_filhos, "nil", :style => "display: none;", :checked => @passo.nil? or @passo.tem_filhos.nil?%>
 		              </li>
                   <div id="quantos_filhos" style="display: none">
 		                <li class="form-row form-text">
@@ -143,7 +141,6 @@
 		                <%= f.label(:estuda_momento, :class => "question-long")%>
 		                <label><%= f.radio_button :estuda_momento, "sim", :class => "validate[required] radio"%><%= t :sim%></label>
 		                <label><%= f.radio_button :estuda_momento, "nao", :class => "validate[required] radio"%><%= t :nao%></label>
-                    <%= f.radio_button :estuda_momento, "nil", :style => "display: none;", :checked => @passo.nil? or @passo.estuda_momento.nil? %>
 		              </li>
 
 		             </ol>

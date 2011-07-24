@@ -4,7 +4,6 @@
             <legend>Sua casa</legend>
             <ol>
               <li class="form-row form-text">
-                <%situacao_casa_selecionado= @passo.situacao_casa unless @passo.nil? %>
 
                 <%= f.label(:situacao_casa, :class => "question-long")%>
 				<div>
@@ -14,7 +13,7 @@
 	                      ["Própria quitada"],  
 	                      ["Própria financiada"],  
 	                      ["Emprestada de terceiros"]
-	                ], situacao_casa_selecionado), {:prompt => "Selecione uma opção"}, {:class => "validate[required]"} %>
+	                ]), {:prompt => "Selecione uma opção"}, {:class => "validate[required]"} %>
 				</div>
               </li>
 
@@ -58,19 +57,18 @@
                 <%= f.label(:possui_tv_assinatura, :class => "question-long")%>
                 <label><%= f.radio_button :possui_tv_por_assinatura, "sim", :class => "validate[required] radio"%><%= t :sim%></label>
                 <label><%= f.radio_button :possui_tv_por_assinatura, "nao", :class => "validate[required] radio"%><%= t :nao%></label>
-                <%= f.radio_button :possui_tv_por_assinatura, "nil", :hidden => "true", :checked => @passo.nil? or  @passo.possui_tv_por_assinatura.nil?%>
+
               </li>
               <div id="operadora_tv_assinatura" style="display: none">
                 <li class="form-row form-text">
                   <%= f.label(:operadora_tv_assinatura, :class => "question")%>
-                  <%operadora_tv_assinatura_selecionado= @passo.operadora_tv_assinatura unless @passo.nil? %>
                   <%= f.select :operadora_tv_assinatura, 
                        options_for_select([
                         ["NET"],  
                         ["SKY"],  
                         ["TVA"],  
                         ["Outra"]
-                  ], operadora_tv_assinatura_selecionado), {:prompt => "Selecione uma opção"} %>
+                  ]), {:prompt => "Selecione uma opção"} %>
                 </li>
               </div>
 
@@ -85,18 +83,7 @@
 		            <div class="left">    
 		                <%= f.label(:renda_individual)%>
 
-                    <%renda_individual_selecionado= @passo.renda_invididual unless @passo.nil? %>
-		                <%= f.select :renda_individual, 
-		                     options_for_select([
-		                      ["Não possuo renda individual"],  
-		                      ["Até R$545,00"],  
-		                      ["De R$546,00 até R$1.040,00"],  
-		                      ["De R$1.041,00 até R$2.600,00"],  
-		                      ["De R$2.601,00 até R$3.900,00"],  
-		                      ["De R$3.901,00 até R$6.500,00"],  
-		                      ["De R$6.501,00 até R$9.100,00"],  
-		                      ["Acima de R$9.101,00"]
-		                ], renda_individual_selecionado), {:prompt => "Selecione uma opção"}, {:class => "validate[required]"} %>
+
 					</div>
 					<div class="left" style="padding-left: 35px;">
 		                <%= f.label(:renda_familiar)%>
@@ -112,14 +99,13 @@
 		                      ["De R$6.501,00 até R$9.100,00"],  
 		                      ["Acima de R$9.101,00"]
 
-		                ], renda_familiar_selecionado), {:prompt => "Selecione uma opção"}, {:class => "validate[required]"} %>
+		                ]), {:prompt => "Selecione uma opção"}, {:class => "validate[required]"} %>
 				   </div>
 			  </li>
               <li class="form-row form-text">
                 <%= f.label(:cartao_credito, :class => "question-long")%>
               	<label><%= f.radio_button :cartao_credito, "sim", :class => "validate[required] radio"%><%= t :sim%></label>
               	<label><%= f.radio_button :cartao_credito, "nao", :class => "validate[required] radio"%><%= t :nao%></label>
-              	<%= f.radio_button :cartao_credito, "nil", :hidden => "true", :checked => @passo.nil? or @passo.cartao_credito.nil?%>
               </li>
               <div id="cartao_credito" style="display: none">
                 <li class="form-row form-text">
@@ -139,7 +125,7 @@
           </fieldset>
 
 		  <div id="form-action">
-      	 <%= f.submit(t(:proximo_passo), :class => "button green") %>
+          	 <%= f.submit(t(:proximo_passo), :class => "button green") %>
 		  </div>
           
       <%end%>
