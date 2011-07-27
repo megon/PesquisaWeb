@@ -6,6 +6,7 @@ class Participante
   key :cpf, String
   key :data_nascimento, Date
   key :passo_atual, Integer, :default => 1
+  key :total_cupons, Integer, :default => 0
   attr_accessor :email_confirmation
 
   validates :nome, :presence => true
@@ -31,6 +32,10 @@ class Participante
 
   def add_indicacao(indicacao)
     self.indicacoes.push indicacao
+  end
+  
+  def add_cupom
+    self.total_cupons = self.total_cupons + 1
   end
 
   private

@@ -92,4 +92,12 @@ describe Participante do
     end
   end
 
+  context "geracao e consulta de cupons" do
+    it "deve acrescentar 1 cupom para o participante" do
+      total_atual = @participante.total_cupons
+      @participante.add_cupom
+      @participante.total_cupons.should > total_atual
+    end 
+  end
+
 end
