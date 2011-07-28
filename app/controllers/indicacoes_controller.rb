@@ -16,4 +16,5 @@ class IndicacoesController < ApplicationController
       render :index
     end
   end
+
 end

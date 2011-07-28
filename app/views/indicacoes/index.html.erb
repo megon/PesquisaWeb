@@ -3,29 +3,18 @@ Aproveite e convide seus amigos para participar de nossa pesquisa.
 Cada um deles irá receber um email com o link de acesso para participar.
 
 <% if flash[:notice] %>
-  <p id="notice" ><%= flash[:notice] %></p>
+  <p id="notice"><%= flash[:notice] %></p>
 <% end %>
   
 <%= form_for :indicacao, :url => { :action  => 'create' } do |f| %>
-  <div class="convidado">
-    <table>
-      <%= render(:partial => 'indicacao', :locals => {:f => f, :total => 10})%>
-    </table>
+  <div id="convidado">
   </div>
+    <table>
+          <%= render(:partial => 'indicacao')%>
+    </table>
+  <%= f.submit "Enviar", :class =>"button green" %> ou
+  <%= link_to_function "Convidar mais amigos" do |page|
+    page.insert_html :bottom, :convidado, :partial => 'indicacao', :object => Indicacao.new
+  end%>
 
-  <%= f.submit "Enviar", :class =>"button green" %>
 <%end%>
-
-<script type="text/javascript">
-$().ready(function() {
-				var nextUrlId = 2;
-				$('div.convidado').click(function(){
-					$('<p />').attr('id', 'urlParagraph' + nextUrlId)
-							  .text("URL: ")
-							  .appendTo('#inputBoxes');
-					$('<input />').attr({'type':'text', 'id':'url' + nextUrlId})
-								  .appendTo('#urlParagraph' + nextUrlId);
-					nextUrlId++;
-				});
-});
-</script>

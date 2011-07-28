@@ -8,6 +8,8 @@ PesquisaWeb::Application.routes.draw do
   get  "passos/edit"
   match 'passos/:id' => 'passos#show', :via => :get
 
+  get "cupons/index"
+
 #  match 'participantes/:controller/:action/:passo_atual'
 
   # The priority is based upon order of creation:
