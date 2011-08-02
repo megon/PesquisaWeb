@@ -76,19 +76,18 @@ describe Participante do
   end
 
   context "indicacao de amigos para participar da pesquisa" do
+    before(:each) do
+      @participante.add_indicacoes [{:nome => 'Patricia', :email => 'patricia@megon.com.br'}]
+      @participante.save
+    end
+    
     it "deve adicionar indicado" do
-      indicacao = Indicacao.new(:nome => 'Patricia',
-                              :email => 'patricia@megon.com.br')
-      @participante.add_indicacao indicacao
       assert_equal @participante.indicacoes.count, 1
     end
 
     it "deve enviar email de convite para o indicado" do
-      indicacao = Indicacao.new(:nome => 'Patricia',
-                              :email => 'patricia@megon.com.br')
-      @participante.add_indicacao indicacao
       mail = ActionMailer::Base.deliveries.last
-      indicacao.email.should == mail.to.first
+      @participante.indicacoes[0].email.should == mail.to.first
     end
   end
 
