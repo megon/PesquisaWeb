@@ -12,18 +12,12 @@ describe IndicacoesController do
     end
 
     it "deve salvar as indicacoes e mostrar mensagem de sucesso" do
-      Indicacao.should_receive(:new).with("nome" => "nome", "email" => "email@email.com").and_return(@indicacao)
-      @indicacao.should_receive(:valid?).and_return(true)
-      @participante.should_receive(:add_indicacao).with(@indicacao)
+      @participante.should_receive(:add_indicacoes).with("nome" => "nome", "email" => "email@email.com")
+      @participante.should_receive(:save).and_return(true)
 
       post :create, :indicacao => {:nome => "nome", :email => "email@email.com"}
       flash[:notice].should eq "Seus amigos foram convidados a participar de nossa pesquisa."
       response.should redirect_to indicacoes_path
-    end
-
-    it "deve mostrar mensagem de erro caso indicacao tenha seus atributos invalidos" do
-      post :create, :indicacao => {:nome => "", :email => "emailemail.com"}
-      flash[:error][0].should contain("Nome deve ser preenchido")
     end
   end 
 end

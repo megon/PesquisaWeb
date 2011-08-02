@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>PesquisaWeb</title>
+  <%= stylesheet_link_tag :all %>
+  <%= csrf_meta_tag %>
+  <link href="/css/reset.css" media="screen" rel="stylesheet" type="text/css" />
+  <link href="/css/application.css" media="screen" rel="stylesheet" type="text/css" />
+  <link href="/css/validationEngine.jquery.css" media="screen" rel="stylesheet" type="text/css" />
+  <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.5.1/jquery.min.js"></script>
+  <script type="text/javascript" src="/javascripts/jquery.validationEngine-pt.js"></script>
+  <script type="text/javascript" src="/javascripts/jquery.validationEngine.js"></script>
+</head>
+
+<body>
+	<div class="wrapper">
+		<div id="content-wrapper">
+			<div id="header">
+				<h1 class="title">Sua Pesquisa</h1>
+			</div><!-- header -->
+			<div id="header-bar">
+                <span id="step_definition" class="right">Você está no passo 1 de 2</span>
+			</div>
+			<div id="form-fields">	
+              <%= yield %>
+			</div><!-- form-fields -->
+		</div><!-- content-wrapper -->
+		<div id="footer">
+			<p>Megon internet services - 2011</p>
+		</div>
+	</div><!-- wrapper -->
+</body>
+</html>

@@ -30,8 +30,10 @@ class Participante
     self.respostas.push nova_resposta
   end
 
-  def add_indicacao(indicacao)
-    self.indicacoes.push indicacao
+  def add_indicacoes(indicacoes)
+    indicacoes.each do |indicacao|
+      self.indicacoes.build(indicacao)
+    end
   end
   
   def add_cupom

@@ -6,13 +6,13 @@ class IndicacoesController < ApplicationController
 
   def create
     @participante = Participante.find_by_cpf(session[:cpf])    
-    @indicacao = Indicacao.new(params[:indicacao])
-    if @indicacao.valid?
-      @participante.add_indicacao @indicacao
+    @participante.add_indicacoes(params[:indicacao])
+    if @participante.save
       flash[:notice] = "Seus amigos foram convidados a participar de nossa pesquisa."
       redirect_to indicacoes_path
     else
-      flash[:error] = @indicacao.errors.full_messages
+      flash[:error] = @participante.errors.full_messages
+      puts "vai"
       render :index
     end
   end
