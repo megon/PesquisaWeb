@@ -13,8 +13,6 @@ Cada um deles irá receber um email com o link de acesso para participar.
           <%= render(:partial => 'indicacao')%>
     </table>
   <%= f.submit "Enviar", :class =>"button green" %> ou
-  <%= link_to_function "Convidar mais amigos" do |page|
-    page.insert_html :bottom, :convidado, :partial => 'indicacao', :object => Indicacao.new
-  end%>
+  <%= add_indicacao_link %>
 
 <%end%>
