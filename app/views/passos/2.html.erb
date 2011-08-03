@@ -13,7 +13,7 @@
 	                      ["Própria quitada"],  
 	                      ["Própria financiada"],  
 	                      ["Emprestada de terceiros"]
-	                ]), {:prompt => "Selecione uma opção"}, {:class => "validate[required]"} %>
+	                ]), {:prompt => "Selecione uma opção"} %>
 				</div>
               </li>
 
@@ -55,8 +55,8 @@
 
               <li class="form-row form-text">
                 <%= f.label(:possui_tv_assinatura, :class => "question-long")%>
-                <label><%= f.radio_button :possui_tv_por_assinatura, "sim", :class => "validate[required] radio"%><%= t :sim%></label>
-                <label><%= f.radio_button :possui_tv_por_assinatura, "nao", :class => "validate[required] radio"%><%= t :nao%></label>
+                <label><%= f.radio_button :possui_tv_por_assinatura, "sim"%><%= t :sim%></label>
+                <label><%= f.radio_button :possui_tv_por_assinatura, "nao"%><%= t :nao%></label>
 
               </li>
               <div id="operadora_tv_assinatura" style="display: none">
@@ -99,7 +99,7 @@
 		                      ["De R$6.501,00 até R$9.100,00"],  
 		                      ["Acima de R$9.101,00"]
 
-		                ]), {:prompt => "Selecione uma opção"}, {:class => "validate[required]"} %>
+		                ]), {:prompt => "Selecione uma opção"} %>
 				   </div>
 			  </li>
               <li class="form-row form-text">
