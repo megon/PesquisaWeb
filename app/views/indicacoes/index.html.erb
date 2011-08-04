@@ -1,0 +1,18 @@
+Você completou nossa pesquisa.<br><br>
+Aproveite e convide seus amigos para participar de nossa pesquisa.
+Cada um deles irá receber um email com o link de acesso para participar.
+
+<% if flash[:notice] %>
+  <p id="notice"><%= flash[:notice] %></p>
+<% end %>
+  
+<%= form_for :indicacao, :url => { :action  => 'create' } do |f| %>
+  <div id="convidado">
+  </div>
+    <table>
+          <%= render(:partial => 'indicacao')%>
+    </table>
+  <%= f.submit "Enviar", :class =>"button green" %> ou
+  <%= add_indicacao_link %>
+
+<%end%>

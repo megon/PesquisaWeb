@@ -1,0 +1,13 @@
+<%= fields_for "indicacao[]", indicacao do |f|%>
+  <tr>
+    <td>
+      <%= f.label(:nome)%>
+      <%= f.text_field :nome, :size => 35, :class=>"validate[required] text-input", :maxlength => 100 %>
+    </td>
+
+    <td>
+      <%= f.label(:email)%>
+      <%= f.text_field :email, :size => 35, :class=>"validate[required] text-input", :maxlength => 100 %>
+    </td>
+  </tr>
+<%end%>
