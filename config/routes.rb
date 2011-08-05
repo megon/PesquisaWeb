@@ -9,6 +9,8 @@ PesquisaWeb::Application.routes.draw do
   match 'passos/:id' => 'passos#show', :via => :get
 
   get "cupons/index"
+  get "cupons/buscar_cupons"
+
 
 #  match 'participantes/:controller/:action/:passo_atual'
 

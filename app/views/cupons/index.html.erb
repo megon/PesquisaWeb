@@ -1,2 +1,9 @@
-<h1>Cupons#index</h1>
-<p>Find me in app/views/cupons/index.html.erb</p>
+
+<h1>Pesquisar Cupons</h1>
+<%= form_tag('/cupons/buscar_cupons', :remote => true, :method => 'get') do %>
+  <%= label_tag(:cpf, "Digite o CPF:") %>
+  <%= text_field_tag :cpf %>
+  <%= submit_tag 'buscar' %>
+<% end %>
+
+<div id="resultado"></div>

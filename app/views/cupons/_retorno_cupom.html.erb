@@ -1,0 +1,5 @@
+  <% if @participante %>
+	<span>Quantidade de cupon(s): <%= @participante.total_cupons.to_s %></span>
+  <% else %>
+	<span>Nenhum cupom encontrado</span>
+  <% end %>
