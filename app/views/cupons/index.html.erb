@@ -1,17 +1,41 @@
-<%= form_tag('/cupons/buscar_cupons', :remote => true, :method => 'get') do %>
-	<fieldset id="cadastro_participante">
-	  <legend>Buscar Cupons</legend>
-	  <ol>
-	    <li>
-	      <%= label_tag(:cpf, "Digite o CPF:") %>
-		  <%= text_field_tag :cpf, nil, :class => 'input_text',:style =>'width:270px' %>		  
-        </li>
-       </ol>
-    </fieldset>
-  <div id="actions-bar">
-    <%= submit_tag 'buscar', :class =>"button azul" %>
-  </div>
-
+<%= form_tag('/cupons/buscar_cupons', :remote => true, :method => 'get', :id => 'consultar_cupons_form') do %>
+     <fieldset>
+       <legend>Buscar Cupons</legend>
+         <ol>
+           <li>
+            <%= label_tag(:cpf, "Digite o CPF:") %>
+            <%= text_field_tag :cpf, nil, :class => 'input_text',:style =>'width:270px' %>		  
+           </li>
+         </ol>
+     </fieldset>
+     <div id="actions-bar">
+       <%= submit_tag 'Pesquisar', {:class =>"button azul", :disable_with => "Aguarde..."} %>
+     </div>
 <% end %>
 
-<div id="resultado"></div>
+<div id="resultado" style="margin: 40px;"></div>
+
+
+	<script type="text/javascript">
+
+	$(document).ready(function(){
+        $("#cpf").mask("999.999.999-99",{placeholder:" "});
+
+		$("#consultar_cupons_form")
+		    .bind("ajax:loading", function(){
+		        // Things to do before sending
+				console.log('vou enviar');
+		    })
+		    .bind("ajax:complete", function(){
+		        // Things to do after the ajax is sent
+				console.log('completei');
+		    })
+		    .bind("ajax:success", function(){
+		        // Things to do when it’s a successful call
+				console.log('sucesso');
+		
+		    });
+	
+    });
+	</script>
+
