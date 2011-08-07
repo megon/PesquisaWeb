@@ -5,8 +5,9 @@ class CuponsController < ApplicationController
   def index
   end
   
-  def buscar_cupons
-    @participante = Participante.find_by_cpf(params[:cpf])
+  def buscar_cupons    
+    #TODO: refatorar para nao terq utilizar '.scan' toda vez q for comparar o campo CPF
+    @participante = Participante.find_by_cpf(params[:cpf].scan(/\d+/).join)
     respond_with(@participante)
   end
 
