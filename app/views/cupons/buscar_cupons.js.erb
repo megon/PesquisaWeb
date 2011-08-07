@@ -1,10 +1,3 @@
 $("#resultado").html('');
 $("#resultado").append('<%= escape_javascript(render(:partial => "retorno_cupom")) %>');
-//$("#qtde_cupons").effect("bounce", { times:3 }, 300);
-
-$('#qtde_cupons').click(function(){
-	$('#qtde_cupons').fadeOut('slow');
-   // Animation complete.
-});
-
 $("#qtde_cupons").effect("highlight", {}, 3000);
