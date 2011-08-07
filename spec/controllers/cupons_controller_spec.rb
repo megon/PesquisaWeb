@@ -16,14 +16,16 @@ describe CuponsController do
     
       get :buscar_cupons, :cpf => "1234567890", :format => :js
       assert_response :success
+      response.should render_template("cupons/buscar_cupons")
     end
     
     it "deve retornar que o participante informado nao possui nenhum cupom" do
       @participante = mock_model(Participante, :total_cupons => 0)
       Participante.should_receive(:find_by_cpf).with('777666').and_return(@participante)
       
-      xhr :get, :buscar_cupons, :cpf => "777666"
+      xhr :get, :buscar_cupons, :cpf => "777666", :format => "js"
       assert_response :success
+      response.should render_template("cupons/buscar_cupons")
     end
     
     it "Quando nao encontrar participante deve retornar que o participante informado nao possui nenhum cupom" do
@@ -32,6 +34,7 @@ describe CuponsController do
       
       xhr :get, :buscar_cupons, :cpf => "888999"
       assert_response :success
+      response.should render_template("cupons/buscar_cupons")
     end
   end
   

@@ -1,9 +1,17 @@
-
-<h1>Pesquisar Cupons</h1>
 <%= form_tag('/cupons/buscar_cupons', :remote => true, :method => 'get') do %>
-  <%= label_tag(:cpf, "Digite o CPF:") %>
-  <%= text_field_tag :cpf %>
-  <%= submit_tag 'buscar' %>
+	<fieldset id="cadastro_participante">
+	  <legend>Buscar Cupons</legend>
+	  <ol>
+	    <li>
+	      <%= label_tag(:cpf, "Digite o CPF:") %>
+		  <%= text_field_tag :cpf, nil, :class => 'input_text',:style =>'width:270px' %>		  
+        </li>
+       </ol>
+    </fieldset>
+  <div id="actions-bar">
+    <%= submit_tag 'buscar', :class =>"button azul" %>
+  </div>
+
 <% end %>
 
 <div id="resultado"></div>
