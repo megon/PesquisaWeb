@@ -1,6 +1,8 @@
+html { background: url('../images/barra-topo.gif') repeat-x; }
+
 body {
-  background: url("../images/bg-body.png") repeat scroll 0 0 transparent;
-  /*background:none repeat scroll 0 0 #F1F1F1;*/
+  /*background: url("../images/bg-body.png") repeat scroll 0 0 transparent; */
+  background-color: #FFF;
   font:13px/1.53846 "Lucida Grande","Lucida Sans Unicode",arial,sans-serif;
   color:#493F2D;
 }
@@ -29,12 +31,13 @@ h2 {
 body .wrapper {
   width: 950px;
   margin: 0 auto;
+  margin-top: 30px;
   /*overflow: hidden;*/
 }
 
 body .wrapper #content-wrapper {
   margin-top: 15px;
-  background-color: #FFF;
+  background-color: #F8F8F8;
   -moz-border-radius:4px 4px 4px 4px;
   border-radius:4px 4px 4px 4px;  
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
