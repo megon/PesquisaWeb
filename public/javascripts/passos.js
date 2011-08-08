@@ -47,7 +47,6 @@ function adicionarValidacaoFilhos(){
       $('#passo_data_nascimento_filho_' + i).mask('99/99/9999',{placeholder:' '});
       $('#passo_data_nascimento_filho_' + i).addClass('validate[required,custom[date]] input-text');
       $('#passo_sexo_filho_' + i + '_masculino').addClass('validate[required] radio');
-      $('#passo_sexo_filho_' + i + '_feminino').addClass('validate[required] radio');
       $('#passo_mora_com_voce_filho_' + i + '_sim').addClass('validate[required] radio');
     }
   }
@@ -56,8 +55,7 @@ function adicionarValidacaoFilhos(){
 function removerValidacaoFilhos(valorInicial){
   for (i = valorInicial; i <= 10; i++){  
     $('#passo_data_nascimento_filho_' + i).removeClass('validate[required,custom[date]] input-text');
-    $('#passo_sexo_filho_' + i + '_masculino').removeClass('validate[required] radio');      
-    $('#passo_sexo_filho_' + i + '_feminino').removeClass('validate[required] radio');      
+    $('#passo_sexo_filho_' + i + '_masculino').removeClass('validate[required] radio');
     $('#passo_mora_com_voce_filho_' + i + '_sim').removeClass('validate[required] radio');
   }
 }

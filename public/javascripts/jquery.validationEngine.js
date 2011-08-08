@@ -608,6 +608,9 @@
                     if($("input[name='" + name + "']:checked").size() == 0) {
                         return options.allrules[rules[i]].alertText;
                     }
+                    if($("input[name='" + name + "']:checked").val()=="nil"){
+                        return options.allrules[rules[i]].alertText;
+                    }
                 case "checkbox":
                     var name = field.attr("name");
                     if ($("input[name='" + name + "']:checked").size() == 0) {

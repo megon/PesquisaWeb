@@ -73,16 +73,16 @@
 		            <ol>
 		              <li class="form-row form-text">
 		                <%= f.label(:atualmente_esta, :class => "question")%>
-		                <label><%= f.radio_button :atualmente_esta, "solteiro", :class => "validate[required] radio"%><%= t :solteiro%></label>
-		                <label><%= f.radio_button :atualmente_esta, "casado", :class => "validate[required] radio"%><%= t :casado%></label>
-		                <label><%= f.radio_button :atualmente_esta, "separado", :class => "validate[required] radio"%><%= t :separado%></label>
-		                <label><%= f.radio_button :atualmente_esta, "viuvo", :class => "validate[required] radio"%><%= t :viuvo%></label>
+		                <label><%= f.radio_button :atualmente_esta, "solteiro"%><%= t :solteiro%></label>
+		                <label><%= f.radio_button :atualmente_esta, "casado"%><%= t :casado%></label>
+		                <label><%= f.radio_button :atualmente_esta, "separado"%><%= t :separado%></label>
+		                <label><%= f.radio_button :atualmente_esta, "viuvo"%><%= t :viuvo%></label>
 		              </li>
 
 		              <li class="form-row form-text">
 		                <%= f.label(:tem_filhos, :class => "question")%>
-		                <label><%= f.radio_button :tem_filhos, "sim", :class => "validate[required] radio"%><%= t :sim%></label>
-		                <label><%= f.radio_button :tem_filhos, "nao", :class => "validate[required] radio"%><%= t :nao%></label>
+		                <label><%= f.radio_button :tem_filhos, "sim"%><%= t :sim%></label>
+		                <label><%= f.radio_button :tem_filhos, "nao"%><%= t :nao%></label>
 		              </li>
                   <div id="quantos_filhos" style="display: none">
 		                <li class="form-row form-text">
@@ -139,8 +139,8 @@
 		              </li>
 		              <li class="form-row form-text">
 		                <%= f.label(:estuda_momento, :class => "question-long")%>
-		                <label><%= f.radio_button :estuda_momento, "sim", :class => "validate[required] radio"%><%= t :sim%></label>
-		                <label><%= f.radio_button :estuda_momento, "nao", :class => "validate[required] radio"%><%= t :nao%></label>
+		                <label><%= f.radio_button :estuda_momento, "sim"%><%= t :sim%></label>
+		                <label><%= f.radio_button :estuda_momento, "nao"%><%= t :nao%></label>
 		              </li>
 
 		             </ol>
