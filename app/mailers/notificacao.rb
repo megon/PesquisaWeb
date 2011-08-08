@@ -1,5 +1,5 @@
 class Notificacao < ActionMailer::Base
-  default :from => "from@example.com"
+  default :from => "PesquisaWeb pesquisaweb@pesquisaweb.heroku.com"
 
   # Subject can be set in your I18n file at config/locales/en.yml
   # with the following lookup:
@@ -7,8 +7,7 @@ class Notificacao < ActionMailer::Base
   #   en.notificacao.confirmacao_cadastro_evento.subject
   #
   def indicar indicado
-    @greeting = "Hi"
-
+    @indicado = indicado
     mail :to => indicado.email
   end
 end
