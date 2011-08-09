@@ -1,5 +1,6 @@
 class Notificacao < ActionMailer::Base
   default :from => "PesquisaWeb pesquisaweb@pesquisaweb.heroku.com"
+  subject => "Convite para participar da PesquisaWeb"
 
   # Subject can be set in your I18n file at config/locales/en.yml
   # with the following lookup:

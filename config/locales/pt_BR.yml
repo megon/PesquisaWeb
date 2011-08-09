@@ -9,7 +9,3 @@ pt_BR:
   time:
     formats:
       default: "%d/%m/%Y" 
-      
-  notificacao:
-    confirmacao_cadastro_evento:
-      subject: Convite para participar da PesquisaWeb
