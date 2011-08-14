@@ -7,7 +7,7 @@
 
     <td>
       <%= f.label(:email)%>
-      <%= f.text_field :email, :size => 35, :class=>"validate[required] text-input", :maxlength => 100 %>
+      <%= f.text_field :email, :size => 35, :class=>"validate[required,custom[email]] text-input", :maxlength => 100 %>
     </td>
   </tr>
 <%end%>

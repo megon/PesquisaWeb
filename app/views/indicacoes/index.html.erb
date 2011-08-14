@@ -6,7 +6,7 @@ Cada um deles irá receber um email com o link de acesso para participar.
   <p id="notice"><%= flash[:notice] %></p>
 <% end %>
   
-<%= form_for :indicacao, :url => { :action  => 'create' } do |f| %>
+<%= form_for :indicacao, :url => { :action  => 'create' }, :html => {:id => "indicacao_form"} do |f| %>
   <div id="convidado">
     <table id="tabela_convidado">
           <%= render(:partial => 'indicacao')%>
