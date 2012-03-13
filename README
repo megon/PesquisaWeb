@@ -1,11 +1,4 @@
-Projeto desenvolvido por Megon Internet Services Ltda. (http://www.megon.com.br)
-
-Contatos:
-Daniel Fukuda: daniel.fukuda@megon.com.br
-Marcelo Menezes: marcelo.menezes@megon.com.br
-Marco Rojo: marco.rojo@megon.com.br
-
-Modelo para criação de pesquisa (surveys) para a web.
+Modelo para criação de pesquisa de mercado e comportamento para a web.
 Exemplo em: http://pesquisaweb.heroku.com
 Para acompanhamento do projeto: https://www.pivotaltracker.com/projects/257277
 
@@ -13,3 +6,10 @@ Utiliza:
 - Rails 3.0;
 - MongoDB;
 - MongoMapper.
+
+Projeto desenvolvido por Megon Internet Services Ltda. (http://www.megon.com.br)
+
+Contatos:
+Daniel Fukuda: daniel.fukuda@megon.com.br
+Marcelo Menezes: marcelo.menezes@megon.com.br
+Marco Rojo: marco.rojo@megon.com.br
