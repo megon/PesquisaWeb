@@ -1,7 +1,7 @@
 Projeto desenvolvido por Megon Internet Services Ltda.
 
 Modelo para criação de pesquisa (surveys) para a web.
-Hospedado no heroku em: http://pesquisaweb.heroku.com
+
 Utiliza:
 - Rails 3.0;
 - MongoDB;
